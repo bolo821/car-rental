@@ -1,0 +1,28 @@
+.rdtCounters {
+    .rdtCount {
+        font-size: 0.9rem;
+    }
+}
+.pb-400 {
+    padding-bottom: 400px;
+}
+.mt--400 {
+    margin-top: -400px;
+}
+.partnerimg {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 28px;
+    border: 0;
+    .partner_logo {
+        width: auto!important;
+        height: 36px;
+        object-fit: contain;
+        visibility: visible;
+        animation-delay: 0.5s;
+        animation-name: fadeInUp;
+    }
+}
+.cursor-pointer {
+    cursor: pointer;
+}
