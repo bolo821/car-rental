@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 var autoIncrement = require('mongoose-auto-increment');
 
 const Airports = new mongoose.Schema({
-    firstName: {
+    code: {
         type: String,
     },
     display_loc: {
