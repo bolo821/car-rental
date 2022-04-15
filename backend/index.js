@@ -8,24 +8,21 @@ require('dotenv').config();
 const app = express();
 
 const mongoose = require("mongoose");
-const config = require('./config/config');
 const db_string = process.env.MONGO_URL;
 const MODE = process.env.DEPLOY_MODE;
 
-require("./models/User");
+require('./models/Airport');
+require('./models/City');
 
 mongoose.connect(db_string, { useNewUrlParser: true })
 .then(() => {
   	console.log("MongoDB connected...");
-})
-.catch(err => console.log(err));
+}).catch(err => console.log(err));
 
 app.use(bodyParser.json());
 app.use(cors());
 
-const user = require('./routes/userRoutes');
 const search = require('./routes/searchRoutes');
-app.use('/api/user', user);
 app.use('/api/search', search);
 
 let PORT;

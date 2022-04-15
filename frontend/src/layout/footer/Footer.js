@@ -9,7 +9,7 @@ import {
   Col,
 } from "reactstrap";
 
-class CardsFooter extends React.Component {
+class Footer extends React.Component {
   render() {
     return (
       <>
@@ -68,4 +68,4 @@ class CardsFooter extends React.Component {
   }
 }
 
-export default CardsFooter;
+export default Footer;
