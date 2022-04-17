@@ -3,6 +3,7 @@ const Abbreviation = require('./Abbreviation');
 require('dotenv').config();
 
 var db_string = process.env.MONGO_URL;
+console.log('aaa: ', db_string);
 require("./Abbreviation");
 mongoose.connect(db_string, { useNewUrlParser: true })
 .then(async () => {
