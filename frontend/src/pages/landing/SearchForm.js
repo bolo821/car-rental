@@ -234,7 +234,7 @@ const SearchForm = () => {
                                                 placeholder: "Choose your pick up time"
                                             }}
                                             dateFormat={false}
-                                            onChange={e => setPickupTime(getTimeString(e._d))}
+                                            onChange={e => {if (e !== '') {setPickupTime(getTimeString(e._d))} else {setPickupTime('')}}}
                                             closeOnSelect
                                         />
                                     </InputGroup>
@@ -269,7 +269,7 @@ const SearchForm = () => {
                                                 placeholder: "Choose your drop time"
                                             }}
                                             dateFormat={false}
-                                            onChange={e => setDropTime(getTimeString(e._d))}
+                                            onChange={e => {if (e !== '') {setDropTime(getTimeString(e._d))} else {setDropTime('')}}}
                                             closeOnSelect
                                         />
                                     </InputGroup>
