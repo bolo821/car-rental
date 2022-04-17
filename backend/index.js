@@ -13,6 +13,8 @@ const MODE = process.env.DEPLOY_MODE;
 
 require('./models/Airport');
 require('./models/City');
+require('./models/Log');
+require('./models/Abbreviation');
 
 mongoose.connect(db_string, { useNewUrlParser: true })
 .then(() => {
@@ -23,7 +25,11 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const search = require('./routes/searchRoutes');
+const log = require('./routes/logRoutes');
+const abbreviation = require('./routes/abbreviationRoutes');
 app.use('/api/search', search);
+app.use('/api/log', log);
+app.use('/api/abbreviation', abbreviation);
 
 let PORT;
 if (MODE === 'production') {

@@ -2,7 +2,7 @@ import React from 'react';
 import Autocomplete from 'react-autocomplete';
 
 const AutoComplete = props => {
-    const { items, searchKey, setSearchKey } = props;
+    const { items, value, setValue, setSearchKey } = props;
 
     return (
         <Autocomplete
@@ -16,9 +16,9 @@ const AutoComplete = props => {
                     {item.label}
                 </div>
             }
-            value={searchKey}
-            onChange={(e) => setSearchKey(e.target.value)}
-            onSelect={(val) => setSearchKey(val)}
+            value={value}
+            onChange={(e) => {setValue(e.target.value); setSearchKey(e.target.value)}}
+            onSelect={(val) => {setValue(val)}}
             wrapperStyle = {{
                 width: '1%',
                 flex: '1 1 auto',
