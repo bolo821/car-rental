@@ -1,8 +1,9 @@
 const csvtojson = require('csvtojson');
 const mongoose = require("mongoose");
 const Airports = require('./Airports');
+require('dotenv').config();
 
-var db_string = 'mongodb://localhost:27017/car_rental';
+var db_string = process.env.MONGO_URL;
 require("./Airports");
 mongoose.connect(db_string, { useNewUrlParser: true })
 .then(() => {

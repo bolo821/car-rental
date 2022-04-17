@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 const Abbreviation = require('./Abbreviation');
+require('dotenv').config();
 
-var db_string = 'mongodb://localhost:27017/car_rental';
+var db_string = process.env.MONGO_URL;
 require("./Abbreviation");
 mongoose.connect(db_string, { useNewUrlParser: true })
 .then(async () => {
