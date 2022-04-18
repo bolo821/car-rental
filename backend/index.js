@@ -31,9 +31,8 @@ app.use('/api/search', search);
 app.use('/api/log', log);
 app.use('/api/abbreviation', abbreviation);
 
-let PORT;
+let PORT = process.env.PORT;
 if (MODE === 'production') {
-	PORT = 8443;
 	const httpsServer = https.createServer({
 		key: fs.readFileSync('./www.re-24.com.key'),
 		cert: fs.readFileSync('./www_re-24_com.crt'),
@@ -47,7 +46,6 @@ if (MODE === 'production') {
 		console.log(`HTTPS Server running on port ${PORT}`);
 	});
 } else if (MODE === 'development') {
-	PORT = 8081;
 	const server = http.createServer(app);
 
 	server.listen(PORT, () => {
