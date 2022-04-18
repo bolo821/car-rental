@@ -18,6 +18,7 @@ import Autocomplete from '../../components/landing/AutoComplete';
 import { handleSearch, saveLog, SET_PICKUP_SEARCH_RESULT, SET_DROP_SEARCH_RESULT } from '../../actions';
 import { getDateString, getTimeString } from '../../utils/helper';
 import { toast } from 'react-toastify';
+import { times } from './data';
 
 const SearchForm = () => {
     const dispatch = useDispatch();
@@ -101,7 +102,7 @@ const SearchForm = () => {
     }, [ dropCities, dropAirports ]);
 
     const validate = () => {
-        if (pickupVal === '' || (showDrop && dropVal === '') || pickupDate === '' || dropDate === '' || pickupDate === null || dropDate === null || pickupTime === null || dropTime === null) {
+        if (pickupVal === '' || (showDrop && dropVal === '') || pickupDate === '' || dropDate === '' || pickupDate === null || dropDate === null || pickupTime === '' || dropTime === '') {
             return 0;
         } else if (pickupDate > dropDate) {
             return 1;
@@ -223,20 +224,13 @@ const SearchForm = () => {
                                             closeOnSelect
                                         />
                                     </InputGroup>
-                                    <InputGroup className={`input-group-alternative ${showError && pickupTime === null ? 'error-rt' : ''}`}>
+                                    <InputGroup className={`input-group-alternative ${showError && pickupTime === '' ? 'error-rt' : ''}`}>
                                         <InputGroupAddon addonType="prepend">
                                             <InputGroupText>
                                                 <i className="ni ni-compass-04" />
                                             </InputGroupText>
                                         </InputGroupAddon>
-                                        <ReactDatetime
-                                            inputProps={{
-                                                placeholder: "Choose your pick up time"
-                                            }}
-                                            dateFormat={false}
-                                            onChange={e => {if (e !== '') {setPickupTime(getTimeString(e._d))} else {setPickupTime('')}}}
-                                            closeOnSelect
-                                        />
+                                        <Autocomplete items={times} value={pickupTime} setValue={setPickupTime} />
                                     </InputGroup>
                                 </div>
                             </FormGroup>
@@ -258,20 +252,13 @@ const SearchForm = () => {
                                             closeOnSelect
                                         />
                                     </InputGroup>
-                                    <InputGroup className={`input-group-alternative ${showError && dropTime === null ? 'error-rt' : ''}`}>
+                                    <InputGroup className={`input-group-alternative ${showError && dropTime === '' ? 'error-rt' : ''}`}>
                                         <InputGroupAddon addonType="prepend">
                                             <InputGroupText>
                                                 <i className="ni ni-compass-04" />
                                             </InputGroupText>
                                         </InputGroupAddon>
-                                        <ReactDatetime
-                                            inputProps={{
-                                                placeholder: "Choose your drop time"
-                                            }}
-                                            dateFormat={false}
-                                            onChange={e => {if (e !== '') {setDropTime(getTimeString(e._d))} else {setDropTime('')}}}
-                                            closeOnSelect
-                                        />
+                                        <Autocomplete items={times} value={dropTime} setValue={setDropTime} />
                                     </InputGroup>
                                 </div>
                             </FormGroup>
