@@ -13,8 +13,8 @@ const App = () => {
             <ToastContainer pauseOnFocusLoss={false} autoClose={5000} hideProgressBar={false} closeOnClick />
             <Router>
                 <Switch>
-                    <Route path="/:clickid/:l1/:l2" exact component={Landing} />
-                    <Redirect to="/123/ggle/ggle/" />
+                    <Route path="/:param" component={Landing} />
+                    <Redirect to={`/clickid=123&l1=ggle&l2=ggle`} />
                 </Switch>
             </Router>
         </Provider>

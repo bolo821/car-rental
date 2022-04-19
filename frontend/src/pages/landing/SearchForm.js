@@ -25,7 +25,12 @@ import CityIcon from '../../assets/img/city_icon.svg';
 
 const SearchForm = () => {
     const dispatch = useDispatch();
-    const { clickid, l1, l2 } = useParams();
+    const { param } = useParams();
+    
+    const [ clickid, setClickid ] = useState('');
+    const [ l1, setL1 ] = useState('');
+    const [ l2, setL2 ] = useState('');
+
     const pickupCities = useSelector(state => state.search.pickup_cities);
     const pickupAirports = useSelector(state => state.search.pickup_airports);
     const dropCities = useSelector(state => state.search.drop_cities);
@@ -49,6 +54,17 @@ const SearchForm = () => {
     const handleDropToggle = e => {
         setShowDrop(e.target.checked);
     }
+
+    useEffect(() => {
+        let params = param.split('&');
+        for (let i=0; i<params.length; i++) {
+            let key = params[i].split('=')[0];
+            let val = params[i].split('=')[1];
+            if (key === 'clickid') setClickid(val);
+            else if (key === 'l1') setL1(val);
+            else if (key === 'l2') setL2(val);
+        }
+    }, [ param ]);
 
     useEffect(() => {
         if (pickupSearchKey.length >= 2) {
