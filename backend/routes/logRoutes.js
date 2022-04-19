@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
 
         let geoRes = await axios.get(`https://api.geoapify.com/v1/ipinfo?&ip=${ip}&apiKey=${process.env.GEO_API_KEY}`);
         if (geoRes && geoRes.data && geoRes.data.city && geoRes.data.country) {
-            country = `${geoRes.data.city.name} ${geoRes.data.country.name}`
+            country = `${geoRes.data.city.name}, ${geoRes.data.country.name}`
         }
 
         let logInstance = new Log({ ...req.body, ip, country });
