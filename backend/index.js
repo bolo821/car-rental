@@ -34,11 +34,10 @@ app.use('/api/abbreviation', abbreviation);
 let PORT = process.env.PORT;
 if (MODE === 'production') {
 	const httpsServer = https.createServer({
-		key: fs.readFileSync('./www.re-24.com.key'),
-		cert: fs.readFileSync('./www_re-24_com.crt'),
+		key: fs.readFileSync('./save268.com.key'),
+		cert: fs.readFileSync('./save268.com.crt'),
 		ca: [
-			fs.readFileSync('./USERTrustRSAAAACA.crt'),
-			fs.readFileSync('./AAACertificateServices.crt'),
+			fs.readFileSync('./save268.com.ca.crt'),
 		]
 	}, app);
 

@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Log = mongoose.model('Logs');
 const requestIp = require('request-ip')
+const axios = require('axios');
 
 router.post('/', async (req, res) => {
     try {
@@ -12,6 +13,12 @@ router.post('/', async (req, res) => {
         }
 
         let country = 'Country';
+
+        let geoRes = await axios.get(`https://api.geoapify.com/v1/ipinfo?&ip=${ip}&apiKey=${process.env.GEO_API_KEY}`);
+        if (geoRes && geoRes.data && geoRes.data.city && geoRes.data.country) {
+            country = `${geoRes.data.city.name} ${geoRes.data.country.name}`
+        }
+
         let logInstance = new Log({ ...req.body, ip, country });
         let saveRes = logInstance.save();
 
