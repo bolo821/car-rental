@@ -17,7 +17,7 @@ export const saveLog = data => async dispatch => {
                 link2 = link2.data.url;
             }
 
-            window.open(`${link1}?a=kan_242297&url=/cars/${pickupVal}/${dropVal}/${pickupDate}/${dropDate}`, '_blank');
+            window.open(`${link1}?a=kan_242297&enc_cid=${data.sendData.clickid}&url=/cars/${pickupVal}/${dropVal}/${pickupDate}/${dropDate}`, '_blank');
             // window.location.href = link2;
         }
     } catch (err) {
