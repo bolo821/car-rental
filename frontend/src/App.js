@@ -14,7 +14,7 @@ const App = () => {
             <Router>
                 <Switch>
                     <Route exact path="/:param" component={Landing} />
-                    <Redirect to={`/clickid=123&l1=kay&l2=ggle`} />
+                    <Redirect to={`/clickid=123&l1=kay&l2=ggle&keyword=keyword`} />
                 </Switch>
             </Router>
         </Provider>

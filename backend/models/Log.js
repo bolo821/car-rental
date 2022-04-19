@@ -11,6 +11,9 @@ const Logs = new mongoose.Schema({
     clickid: {
         type: String,
     },
+    keyword: {
+        type: String,
+    },
     pickup: {
         searchKey: {
             type: String,
