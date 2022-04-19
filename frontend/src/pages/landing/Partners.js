@@ -9,7 +9,7 @@ import {
 const Partners = () => {
     return (
         <>
-            <Container className="pt-lg pb-300">
+            <Container className="pt-lg pb-300" id="partner-id">
                 <Row className="text-center justify-content-center">
                     <Col lg="10">
                         <h2 className="display-3 text-white">Meet Our Partners</h2>

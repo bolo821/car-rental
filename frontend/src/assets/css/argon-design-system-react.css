@@ -13002,8 +13002,6 @@ textarea[resize="horizontal"] {
     padding: 1rem; } }
 
 .navbar-transparent {
-  position: absolute;
-  top: 0;
   width: 100%;
   z-index: 100;
   background-color: transparent !important;

@@ -1,5 +1,4 @@
 export const getDateString = date => {
-    if (date === '') return '';
     let cDate = new Date(date);
     if (cDate.toString() === 'Invalid Date') {
         return null;
@@ -15,7 +14,6 @@ export const getDateString = date => {
 }
 
 export const getTimeString = date => {
-    if (date === '') return '';
     let cDate = new Date(date);
     if (cDate.toString() === 'Invalid Date') {
         return null;
@@ -29,4 +27,14 @@ export const getTimeString = date => {
     if (second < 10) second = `0${second}`;
 
     return `${hour}:${minute}:${second}`;
+}
+
+export const getOffsetDate = (date, offset) => {
+    let cDate = new Date(date);
+    if (cDate.toString() === 'Invalid Date') {
+        return null;
+    }
+
+    cDate.setDate(cDate.getDate() + parseInt(offset));
+    return cDate;
 }

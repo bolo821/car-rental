@@ -6,40 +6,14 @@ import {
     Col,
     UncontrolledCarousel,
 } from "reactstrap";
-  
-const items = [
-    {
-        src: require("../../assets/img/car1.webp"),
-        altText: '',
-        caption: '',
-        header: ''
-    },
-    {
-        src: require("../../assets/img/car2.webp"),
-        altText: '',
-        caption: '',
-        header: ''
-    },
-    {
-        src: require("../../assets/img/car3.webp"),
-        altText: '',
-        caption: '',
-        header: ''
-    },
-    {
-        src: require("../../assets/img/car4.webp"),
-        altText: '',
-        caption: '',
-        header: ''
-    }
-];
+import { cars } from './data';
 
 const Features = () => {
     return (
         <Container>
             <Row className="row-grid align-items-center">
                 <Col className="order-md-2" md="6">
-                    <UncontrolledCarousel items={items} />
+                    <UncontrolledCarousel items={cars} />
                 </Col>
                 <Col className="order-md-1" md="6">
                     <div className="pr-md-5">

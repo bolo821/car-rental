@@ -12,13 +12,16 @@ import {
     Container,
     Row,
     Col,
+    UncontrolledCarousel,
 } from "reactstrap";
 import ReactDatetime from "react-datetime";
 import Autocomplete from '../../components/landing/AutoComplete';
 import { handleSearch, saveLog, SET_PICKUP_SEARCH_RESULT, SET_DROP_SEARCH_RESULT } from '../../actions';
-import { getDateString, getTimeString } from '../../utils/helper';
+import { getDateString, getTimeString, getOffsetDate } from '../../utils/helper';
 import { toast } from 'react-toastify';
-import { times } from './data';
+import { times, cars } from './data';
+import AirportIcon from '../../assets/img/airplane_icon.svg';
+import CityIcon from '../../assets/img/city_icon.svg';
 
 const SearchForm = () => {
     const dispatch = useDispatch();
@@ -36,10 +39,10 @@ const SearchForm = () => {
     const [ autoCompleteDataPickup, setAutoCompleteDataPickup ] = useState([]);
     const [ autoCompleteDataDrop, setAutoCompleteDataDrop ] = useState([]);
 
-    const [ pickupDate, setPickupDate ] = useState('');
-    const [ pickupTime, setPickupTime ] = useState('');
-    const [ dropDate, setDropDate ] = useState('');
-    const [ dropTime, setDropTime ] = useState('');
+    const [ pickupDate, setPickupDate ] = useState(getDateString(getOffsetDate(new Date(), 28)));
+    const [ pickupTime, setPickupTime ] = useState('10:00');
+    const [ dropDate, setDropDate ] = useState(getDateString(getOffsetDate(new Date(), 36)));
+    const [ dropTime, setDropTime ] = useState('11:00');
 
     const [ showError, setShowError ] = useState(false);
 
@@ -48,7 +51,7 @@ const SearchForm = () => {
     }
 
     useEffect(() => {
-        if (pickupSearchKey.length >= 3) {
+        if (pickupSearchKey.length >= 2) {
             dispatch(handleSearch(pickupSearchKey, 'pickup'));
         } else {
             dispatch({
@@ -63,7 +66,7 @@ const SearchForm = () => {
     }, [ pickupSearchKey ]);
 
     useEffect(() => {
-        if (dropSearchKey.length >= 3) {
+        if (dropSearchKey.length >= 2) {
             dispatch(handleSearch(dropSearchKey, 'drop'));
         } else {
             dispatch({
@@ -80,10 +83,16 @@ const SearchForm = () => {
     useEffect(() => {
         let tempArr = [];
         for (let i=0; i<pickupCities.length; i++) {
-            tempArr.push({ label: pickupCities[i].ar_location_name });
+            tempArr.push({
+                label: pickupCities[i].ar_location_name,
+                icon: CityIcon,
+            });
         }
         for (let i=0; i<pickupAirports.length; i++) {
-            tempArr.push({ label: pickupAirports[i].full_loc });
+            tempArr.push({
+                label: pickupAirports[i].full_loc,
+                icon: AirportIcon,
+            });
         }
 
         setAutoCompleteDataPickup(tempArr);
@@ -92,17 +101,73 @@ const SearchForm = () => {
     useEffect(() => {
         let tempArr = [];
         for (let i=0; i<dropCities.length; i++) {
-            tempArr.push({ label: dropCities[i].ar_location_name });
+            tempArr.push({
+                label: dropCities[i].ar_location_name,
+                icon: CityIcon,
+            });
         }
         for (let i=0; i<dropAirports.length; i++) {
-            tempArr.push({ label: dropAirports[i].full_loc });
+            tempArr.push({
+                label: dropAirports[i].full_loc,
+                icon: AirportIcon,
+            });
         }
 
         setAutoCompleteDataDrop(tempArr);
     }, [ dropCities, dropAirports ]);
 
+    useEffect(() => {
+        if (pickupDate) {
+            setDropDate(getDateString(getOffsetDate(pickupDate, 8)));
+        } else {
+            setPickupDate(getDateString(getOffsetDate(new Date(), 28)));
+        }
+    }, [ pickupDate ]);
+
+    useEffect(() => {
+        if (dropDate === null) {
+            setDropDate(getDateString(getOffsetDate(pickupDate, 8)));
+        }
+    // eslint-disable-next-line
+    }, [ dropDate ]);
+
+    useEffect(() => {
+        let index = calcNextTime(pickupTime);
+
+        if (index === -1) {
+            setPickupTime('10:00');
+        } else {
+            setDropTime(times[index].label);
+        }
+    }, [ pickupTime ]);
+
+    useEffect(() => {
+        let index = calcNextTime(dropTime);
+
+        if (index === -1) {
+            setDropTime(times[calcNextTime(pickupTime)].label);
+        }
+    // eslint-disable-next-line
+    }, [ dropTime ]);
+
+    const calcNextTime = curTime => {
+        let index = -1;
+        for (let i=0; i<times.length; i++) {
+            if (times[i].label === curTime) {
+                index = i;
+                break;
+            }
+        }
+
+        if (index === -1) {
+            return -1;
+        } else {
+            return (index + 1) % 24;
+        }
+    }
+
     const validate = () => {
-        if (pickupVal === '' || (showDrop && dropVal === '') || pickupDate === '' || dropDate === '' || pickupDate === null || dropDate === null || pickupTime === '' || dropTime === '') {
+        if (pickupVal === '' || (showDrop && dropVal === '')) {
             return 0;
         } else if (pickupDate > dropDate) {
             return 1;
@@ -163,11 +228,11 @@ const SearchForm = () => {
 
     return (
         <Container>
-            <Row className="justify-content-center mt--400">
+            <Row className="justify-content-center position-relative">
                 <Col lg="8">
-                    <Card className="bg-gradient-secondary shadow">
-                        <CardBody className="p-lg-5">
-                            <h4 className="mb-1">Want to rent a car?</h4>
+                    <Card className="bg-gradient-secondary shadow-rt">
+                        <CardBody className="p-lg-5 color-black">
+                            <h3 className="mb-1 font-weight-800">Want to rent a car?</h3>
                             <p className="mt-0">
                                 You can simply do it by simple search.
                             </p>
@@ -222,6 +287,12 @@ const SearchForm = () => {
                                             timeFormat={false}
                                             onChange={e => setPickupDate(getDateString(e._d))}
                                             closeOnSelect
+                                            value={new Date(pickupDate)}
+                                            viewDate={new Date(pickupDate)}
+                                            isValidDate={currentDate => {
+                                                if (currentDate._d < new Date()) return false;
+                                                return true;
+                                            }}
                                         />
                                     </InputGroup>
                                     <InputGroup className={`input-group-alternative ${showError && pickupTime === '' ? 'error-rt' : ''}`}>
@@ -250,6 +321,12 @@ const SearchForm = () => {
                                             timeFormat={false}
                                             onChange={e => setDropDate(getDateString(e._d))}
                                             closeOnSelect
+                                            value={new Date(dropDate)}
+                                            viewDate={new Date(dropDate)}
+                                            isValidDate={currentDate => {
+                                                if (currentDate._d < new Date(pickupDate)) return false;
+                                                return true;
+                                            }}
                                         />
                                     </InputGroup>
                                     <InputGroup className={`input-group-alternative ${showError && dropTime === '' ? 'error-rt' : ''}`}>
@@ -277,6 +354,9 @@ const SearchForm = () => {
                         </CardBody>
                     </Card>
                 </Col>
+                <div className='position-absolute z--1 w-100 h-100 d-flex align-items-center'>
+                    <UncontrolledCarousel items={cars} />
+                </div>
             </Row>
         </Container>
     )

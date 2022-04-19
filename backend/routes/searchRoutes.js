@@ -9,33 +9,35 @@ router.get('/:searchKey', async (req, res) => {
 
     try {
         const cityRes = await City.find({ city_name: { '$regex': searchKey, '$options': 'i' }}).limit(6);
-        let cityCnt = cityRes.length;
     
-        let airportRes = [];
-        if (cityCnt < 6) {
-            airportRes = await Airport.find({ $or: [{ code: { '$regex': searchKey, '$options': 'i' }},
-                { name: { '$regex': searchKey, '$options': 'i' }}]
-            }).limit(6);
-        }
+        const airportRes = await Airport.find({ $or: [{ code: { '$regex': searchKey, '$options': 'i' }},
+            { name: { '$regex': searchKey, '$options': 'i' }}]
+        }).limit(6);
 
-        let cityCodes = cityRes.map(ele => {
-            return ele.iso3;
-        });
+        let cityLen = cityRes.length;
+        let airportLen = airportRes.length;
 
-        airportRes = airportRes.filter(ele => {
-            return !cityCodes.includes(ele.code);
-        });
-
-        if (airportRes.length > 6-cityCnt) {
-            airportRes = airportRes.filter((ele, index) => {
-                return index < 6-cityCnt;
+        if (cityLen >= 3 && airportLen >= 3) {
+            res.json({
+                city: cityRes.slice(0, 3),
+                airport: airportRes.slice(0, 3),
             });
+        } else if (cityLen < 3 && airportLen >= 3) {
+            res.json({
+                city: cityRes,
+                airport: airportLen > 6-cityLen ? airportRes.slice(0, 6-cityLen) : airportRes,
+            });
+        } else if (cityLen >= 3 && airportLen < 3) {
+            res.json({
+                city: cityLen > 6-airportLen ? cityRes.slice(0, 6-airportLen) : cityRes,
+                airport: airportRes,
+            });
+        } else {
+            res.json({
+                city: cityRes,
+                airport: airportRes,
+            })
         }
-        
-        res.json({
-            city: cityRes,
-            airport: airportRes,
-        });
     } catch (err) {
         console.log('error: ', err);
         res.status(500).json({

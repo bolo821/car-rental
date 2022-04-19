@@ -24,3 +24,30 @@ export const times = [
     { label: '22:00' },
     { label: '23:00' },
 ];
+
+export const cars = [
+    {
+        src: require("../../assets/img/car1.webp"),
+        altText: '',
+        caption: '',
+        header: ''
+    },
+    {
+        src: require("../../assets/img/car2.webp"),
+        altText: '',
+        caption: '',
+        header: ''
+    },
+    {
+        src: require("../../assets/img/car3.webp"),
+        altText: '',
+        caption: '',
+        header: ''
+    },
+    {
+        src: require("../../assets/img/car4.webp"),
+        altText: '',
+        caption: '',
+        header: ''
+    }
+];

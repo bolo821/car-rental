@@ -30,3 +30,26 @@
 .error-rt {
     border: 1px solid red;
 }
+.logo-link-rt {
+    img {
+        height: 80px;
+    }
+}
+.z--1 {
+    z-index: -1;
+}
+
+.carousel.slide {
+    width: 100%;
+}
+
+.shadow-rt {
+    box-shadow: 0 15px 35px rgb(50, 50, 93), 0 5px 15px rgb(0, 0, 0) !important;
+}
+.color-black {
+    color: black;
+    font-weight: 600;
+}
+.mt-6-rt {
+    margin-top: 6rem;
+}

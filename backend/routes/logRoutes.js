@@ -7,6 +7,10 @@ const requestIp = require('request-ip')
 router.post('/', async (req, res) => {
     try {
         let ip = requestIp.getClientIp(req);
+        if (ip.substr(0, 7) == "::ffff:") {
+            ip = ip.substr(7, ip.length);
+        }
+
         let country = 'Country';
         let logInstance = new Log({ ...req.body, ip, country });
         let saveRes = logInstance.save();

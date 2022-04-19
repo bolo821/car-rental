@@ -15,7 +15,7 @@ import {
 
 const Contact = () => {
     return (
-        <Container>
+        <Container id="contact-id">
             <Row className="justify-content-center mt--300">
                 <Col lg="8">
                     <Card className="bg-gradient-secondary shadow">

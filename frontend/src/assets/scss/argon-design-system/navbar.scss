@@ -186,25 +186,24 @@
 // Transparent navbar
 
 .navbar-transparent {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-  background-color: transparent !important;
-  border: 0;
-  box-shadow: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    border: 0;
+    box-shadow: none;
 
-  .navbar-brand {
-    color: rgba(255, 255, 255, 1);
-  }
+    .navbar-brand {
+        color: rgba(255, 255, 255, 1);
+    }
 
-  .navbar-toggler {
-    color: rgba(255, 255, 255, 1);
-  }
+    .navbar-toggler {
+        color: rgba(255, 255, 255, 1);
+    }
 
-  .navbar-toggler-icon {
-    background-image: $navbar-dark-toggler-icon-bg;
-  }
+    .navbar-toggler-icon {
+        background-image: $navbar-dark-toggler-icon-bg;
+    }
 }
 
 .bg-white {

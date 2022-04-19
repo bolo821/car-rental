@@ -13,11 +13,15 @@ const AutoComplete = props => {
             }}
             renderItem={(item, isHighlighted) =>
                 <div style={{ background: isHighlighted ? 'lightgray' : 'white', padding: '5px 10px' }} key={item.label}>
+                    {
+                        item.icon &&
+                        <img src={item.icon} alt="ico" height="20px" className='mr-2' />
+                    }
                     {item.label}
                 </div>
             }
             value={value}
-            onChange={(e) => {setValue(e.target.value); setSearchKey(e.target.value)}}
+            onChange={(e) => {setValue(e.target.value); setSearchKey && setSearchKey(e.target.value)}}
             onSelect={(val) => {setValue(val)}}
             wrapperStyle = {{
                 width: '1%',
