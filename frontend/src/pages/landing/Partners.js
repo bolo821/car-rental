@@ -18,38 +18,36 @@ const Partners = () => {
                         </p>
                     </Col>
                 </Row>
-                <Row className="row-grid mt-5">
-                    <div className="row d-flex flex-wrap justify-content-center">
-                        <div className=" text-center partnerimg">
-                            <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Enterprise-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="100" />
-                        </div>
-                        <div className=" text-center partnerimg">
-                            <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Hertz-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="106" />
-                        </div>
-                        <div className=" text-center partnerimg">
-                            <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Avis-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="90" />
-                        </div>
-                        <div className=" text-center partnerimg">
-                            <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/National-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="111" />
-                        </div>
-                        <div className=" text-center partnerimg">
-                            <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Alamo-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="92" />
-                        </div>
-                        <div className=" text-center partnerimg">
-                            <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Budget-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="100" />
-                        </div>
-                        <div className=" text-center partnerimg">
-                            <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Europcar_logo-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="86" />
-                        </div>
-                        <div className=" text-center partnerimg">
-                            <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Sixt-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="100" />
-                        </div>
-                        <div className=" text-center partnerimg">
-                            <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Dollar-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="90" />
-                        </div>
-                        <div className=" text-center partnerimg">
-                            <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Thrifty-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="86" />
-                        </div>
+                <Row className="row-grid mt-5 justify-content-center">
+                    <div className=" text-center partnerimg">
+                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Enterprise-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="100" />
+                    </div>
+                    <div className=" text-center partnerimg">
+                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Hertz-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="106" />
+                    </div>
+                    <div className=" text-center partnerimg">
+                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Avis-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="90" />
+                    </div>
+                    <div className=" text-center partnerimg">
+                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/National-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="111" />
+                    </div>
+                    <div className=" text-center partnerimg">
+                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Alamo-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="92" />
+                    </div>
+                    <div className=" text-center partnerimg">
+                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Budget-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="100" />
+                    </div>
+                    <div className=" text-center partnerimg">
+                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Europcar_logo-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="86" />
+                    </div>
+                    <div className=" text-center partnerimg">
+                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Sixt-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="100" />
+                    </div>
+                    <div className=" text-center partnerimg">
+                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Dollar-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="90" />
+                    </div>
+                    <div className=" text-center partnerimg">
+                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Thrifty-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="86" />
                     </div>
                 </Row>
             </Container>

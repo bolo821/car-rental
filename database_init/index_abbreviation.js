@@ -22,5 +22,13 @@ mongoose.connect(db_string, { useNewUrlParser: true })
     abbr = new Abbreviation(oneRow);
     await abbr.save();
     console.log('saved 2');
+
+    oneRow = {
+        name: 'kay',
+        url: 'https://kayak.com/in',
+    };
+    abbr = new Abbreviation(oneRow);
+    await abbr.save();
+    console.log('saved 2');
 })
 .catch(err => console.log(err));

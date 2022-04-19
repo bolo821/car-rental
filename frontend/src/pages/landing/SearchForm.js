@@ -12,14 +12,14 @@ import {
     Container,
     Row,
     Col,
-    UncontrolledCarousel,
+    // UncontrolledCarousel,
 } from "reactstrap";
 import ReactDatetime from "react-datetime";
 import Autocomplete from '../../components/landing/AutoComplete';
 import { handleSearch, saveLog, SET_PICKUP_SEARCH_RESULT, SET_DROP_SEARCH_RESULT } from '../../actions';
 import { getDateString, getTimeString, getOffsetDate } from '../../utils/helper';
 import { toast } from 'react-toastify';
-import { times, cars } from './data';
+import { times, /*cars*/ } from './data';
 import AirportIcon from '../../assets/img/airplane_icon.svg';
 import CityIcon from '../../assets/img/city_icon.svg';
 
@@ -244,9 +244,9 @@ const SearchForm = () => {
 
     return (
         <Container>
-            <Row className="justify-content-center position-relative">
+            <Row className="position-relative">
                 <Col lg="8">
-                    <Card className="bg-gradient-secondary shadow-rt">
+                    <Card className="bg-gradient-secondary shadow">
                         <CardBody className="p-lg-5 color-black">
                             <h3 className="mb-1 font-weight-800">Want to rent a car?</h3>
                             <p className="mt-0">
@@ -370,9 +370,67 @@ const SearchForm = () => {
                         </CardBody>
                     </Card>
                 </Col>
-                <div className='position-absolute z--1 w-100 h-100 d-flex align-items-center'>
+                {/* <div className='position-absolute z--1 w-100 h-100 d-flex align-items-center'>
                     <UncontrolledCarousel items={cars} />
-                </div>
+                </div> */}
+                <Col lg="4" className="mt-5 d-md-none d-lg-block">
+                    <Card className="bg-icons-rt shadow">
+                        <CardBody>
+                            <Row>
+                                <Col lg="6" md="4" className="d-flex align-items-center justify-content-center my-3 col-6">
+                                    <div className="text-center">
+                                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Enterprise-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="100" />
+                                    </div>
+                                </Col>
+                                <Col lg="6" md="4" className="d-flex align-items-center justify-content-center my-3 col-6">
+                                    <div className=" text-center">
+                                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Hertz-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="106" />
+                                    </div>
+                                </Col>
+                                <Col lg="6" md="4" className="d-flex align-items-center justify-content-center my-3 col-6">
+                                    <div className=" text-center">
+                                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Avis-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="90" />
+                                    </div>
+                                </Col>
+                                <Col lg="6" md="4" className="d-flex align-items-center justify-content-center my-3 col-6">
+                                    <div className=" text-center">
+                                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/National-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="111" />
+                                    </div>
+                                </Col>
+                                <Col lg="6" md="4" className="d-flex align-items-center justify-content-center my-3 col-6">
+                                    <div className=" text-center">
+                                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Alamo-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="92" />
+                                    </div>
+                                </Col>
+                                <Col lg="6" md="4" className="d-flex align-items-center justify-content-center my-3 col-6">
+                                    <div className=" text-center">
+                                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Budget-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="100" />
+                                    </div>
+                                </Col>
+                                <Col lg="6" md="4" className="d-flex align-items-center justify-content-center my-3 col-6">
+                                    <div className=" text-center">
+                                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Europcar_logo-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="86" />
+                                    </div>
+                                </Col>
+                                <Col lg="6" md="4" className="d-flex align-items-center justify-content-center my-3 col-6">
+                                    <div className=" text-center">
+                                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Sixt-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="100" />
+                                    </div>
+                                </Col>
+                                <Col lg="6" md="4" className="d-flex align-items-center justify-content-center my-3 col-6">
+                                    <div className=" text-center">
+                                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Dollar-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="90" />
+                                    </div>
+                                </Col>
+                                <Col lg="6" md="4" className="d-flex align-items-center justify-content-center my-3 col-6">
+                                    <div className="text-center">
+                                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Thrifty-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="86" />
+                                    </div>
+                                </Col>
+                            </Row>
+                        </CardBody>
+                    </Card>
+                </Col>
             </Row>
         </Container>
     )
