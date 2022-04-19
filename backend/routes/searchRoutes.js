@@ -10,9 +10,20 @@ router.get('/:searchKey', async (req, res) => {
     try {
         const cityRes = await City.find({ city_name: { '$regex': searchKey, '$options': 'i' }}).limit(6);
     
-        const airportRes = await Airport.find({ $or: [{ code: { '$regex': searchKey, '$options': 'i' }},
-            { name: { '$regex': searchKey, '$options': 'i' }}]
-        }).limit(6);
+        let airportRes = [];
+
+        for (let i=0; i<cityRes.length; i++) {
+            let tRes = await Airport.find({ city: cityRes[i].city_name });
+            if (tRes) {
+                airportRes = [ ...airportRes, ...tRes ];
+            }
+        }
+        if (airportRes.length < 6) {
+            let tRes = await Airport.find({ $or: [{ code: { '$regex': searchKey, '$options': 'i' }},
+                { name: { '$regex': searchKey, '$options': 'i' }}]
+            }).limit(6);
+            airportRes = [ ...airportRes, ...tRes ];
+        } 
 
         let cityLen = cityRes.length;
         let airportLen = airportRes.length;
