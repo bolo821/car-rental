@@ -1,3 +1,14 @@
+#root { 
+    display: flex; 
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+  
+footer{
+    margin-top:auto; 
+}
+
 .rdtCounters {
     .rdtCount {
         font-size: 0.9rem;
@@ -55,4 +66,42 @@
 }
 .bg-icons-rt {
     background: #1a174d;
+}
+#root {
+    p {
+        color: black;
+    }
+    table {
+        thead {
+            th {
+                color: rgb(26, 71, 144);
+                padding: .5rem;
+            }
+        }
+        tbody {
+            td {
+                padding: .5rem;
+            }
+            tr {
+                td:first-child {
+                    display: flex;
+                }
+            }
+        }
+    }
+}
+
+.footer-link-rt {
+    color: #8898aa !important;
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+    &:hover {
+        color: #8898aa !important;
+    }
+}
+
+.terms-container-rt {
+    ul {
+        list-style: auto;
+    }
 }
