@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-// JavaScript plugin that hides or shows a component based on your scroll
+import { Link, useHistory } from "react-router-dom";
 import Headroom from "headroom.js";
-// reactstrap components
 import {
   UncontrolledCollapse,
   Navbar,
@@ -15,6 +13,8 @@ import {
 } from "reactstrap";
 
 const DemoNavbar = () => {
+  const history = useHistory();
+  
   useEffect(() => {
     let headroom = new Headroom(document.getElementById("navbar-main"));
     headroom.init();
@@ -35,7 +35,7 @@ const DemoNavbar = () => {
         break;
       }
       default: {
-        
+        break;
       }
     }
   }
@@ -85,35 +85,40 @@ const DemoNavbar = () => {
                   <NavLink
                     className="nav-link-icon cursor-pointer"
                     to="#"
-                    onClick={() => handleScroll('home')}
+                    onClick={() => {history.push('/'); handleScroll('home')}}
                   >
                     <span className="nav-link-inner--text ml-2">
                       Home
                     </span>
                   </NavLink>
                 </NavItem>
-                <NavItem>
-                  <NavLink
-                    className="nav-link-icon cursor-pointer"
-                    to="/"
-                    onClick={() => handleScroll('partner')}
-                  >
-                    <span className="nav-link-inner--text ml-2">
-                      Our Partners
-                    </span>
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink
-                    className="nav-link-icon cursor-pointer"
-                    to="/"
-                    onClick={() => handleScroll('contact')}
-                  >
-                    <span className="nav-link-inner--text ml-2">
-                      Subscribe
-                    </span>
-                  </NavLink>
-                </NavItem>
+                {
+                  history.location.pathname.includes('landing') &&
+                  <>
+                    <NavItem>
+                      <NavLink
+                        className="nav-link-icon cursor-pointer"
+                        to="/"
+                        onClick={() => handleScroll('partner')}
+                      >
+                        <span className="nav-link-inner--text ml-2">
+                          Our Partners
+                        </span>
+                      </NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink
+                        className="nav-link-icon cursor-pointer"
+                        to="/"
+                        onClick={() => handleScroll('contact')}
+                      >
+                        <span className="nav-link-inner--text ml-2">
+                          Subscribe
+                        </span>
+                      </NavLink>
+                    </NavItem>
+                  </>
+                }
               </Nav>
             </UncontrolledCollapse>
           </Container>
