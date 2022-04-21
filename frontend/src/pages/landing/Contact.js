@@ -16,7 +16,7 @@ import {
 const Contact = () => {
     return (
         <Container id="contact-id">
-            <Row className="justify-content-center mt--300">
+            <Row className="justify-content-center py-5">
                 <Col lg="8">
                     <Card className="bg-gradient-secondary shadow">
                         <CardBody className="p-lg-5">

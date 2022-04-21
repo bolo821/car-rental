@@ -15,10 +15,10 @@ const Landing = () => {
       <section className="section mt-6-rt pt-0">
         <SearchForm />
       </section>
-      <section className="section bg-gradient-default pt-0">
+      <section className="section pt-0">
         <Partners />
       </section>
-      <section className="section pt-lg-0 section-contact-us">
+      <section className="section py-0 bg-gradient-default">
         <Contact />
       </section>
     </>
