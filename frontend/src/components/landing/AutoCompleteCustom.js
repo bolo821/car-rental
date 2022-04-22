@@ -2,14 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const AutoCompleteCustom = props => {
     const { items, value, setValue, setSearchKey, setCity, setCode } = props;
-    const [ showPanel, setShowPanel ] = useState(true);
+    const [ showPanel, setShowPanel ] = useState(false);
     const inputRef = useRef(null);
-    
-    useEffect(() => {
-        if (inputRef?.current === window.document.activeElement) {
-            setShowPanel(true);
-        }
-    }, [ value ]);
     
     const handleSelect = item => {
         setValue(item.label); 
@@ -17,6 +11,13 @@ const AutoCompleteCustom = props => {
         if (setCode) setCode(item.code);
         setShowPanel(false);
     }
+
+    useEffect(() => {
+        window.document.addEventListener('click', e => {
+            if (e.target !== inputRef.current)
+                setShowPanel(false);
+        });
+    }, []);
 
     return (
         <div className='auto-complete-rt'>
@@ -27,6 +28,7 @@ const AutoCompleteCustom = props => {
                 placeholder="Enter a city or airport"
                 className='form-control'
                 onChange={e => {setValue(e.target.value); setSearchKey && setSearchKey(e.target.value)}}
+                onClick={e => {e.preventDefault(); setShowPanel(true)}}
                 value={value}
                 ref={inputRef}
             />
@@ -35,7 +37,9 @@ const AutoCompleteCustom = props => {
                     <ul>
                         { items.map((item, index) => 
                             <li key={index} onClick={() => {handleSelect(item)}}>
-                                <img src={item.icon} alt="ico" height="20px" className='mr-2' />
+                                { item.icon &&
+                                    <img src={item.icon} alt="ico" height="20px" className='mr-2' />
+                                }
                                 {item.label}
                             </li>
                         )}

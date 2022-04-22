@@ -119,6 +119,8 @@ footer{
         cursor: pointer;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
         border-radius: .3rem;
+        max-height: 18rem;
+        overflow-y: auto;
         ul {
             list-style: none;
             padding: 0;

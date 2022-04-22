@@ -15,7 +15,6 @@ import {
     // UncontrolledCarousel,
 } from "reactstrap";
 import ReactDatetime from "react-datetime";
-import Autocomplete from '../../components/landing/AutoComplete';
 import AutoCompleteCustom from '../../components/landing/AutoCompleteCustom';
 import { handleSearch, saveLog, SET_PICKUP_SEARCH_RESULT, SET_DROP_SEARCH_RESULT } from '../../actions';
 import { getDateString, getTimeString, getOffsetDate } from '../../utils/helper';
@@ -107,46 +106,54 @@ const SearchForm = () => {
 
     useEffect(() => {
         let tempArr = [];
-        for (let i=0; i<pickupCities.length; i++) {
-            tempArr.push({
-                label: pickupCities[i].ar_location_name,
-                icon: CityIcon,
-                city: pickupCities[i].city_name,
-                code: pickupCities[i].iso2 === 'US' ? pickupCities[i].state : pickupCities[i].iso2,
-            });
-        }
-        for (let i=0; i<pickupAirports.length; i++) {
-            tempArr.push({
-                label: pickupAirports[i].full_loc,
-                icon: AirportIcon,
-                city: pickupAirports[i].city,
-                code: pickupAirports[i].country === 'US' ? pickupAirports[i].state : pickupAirports[i].country,
-            });
+
+        if (pickupSearchKey.length >= 2) {
+            for (let i=0; i<pickupCities.length; i++) {
+                tempArr.push({
+                    label: pickupCities[i].ar_location_name,
+                    icon: CityIcon,
+                    city: pickupCities[i].city_name,
+                    code: pickupCities[i].iso2 === 'US' ? pickupCities[i].state : pickupCities[i].iso2,
+                });
+            }
+            for (let i=0; i<pickupAirports.length; i++) {
+                tempArr.push({
+                    label: pickupAirports[i].full_loc,
+                    icon: AirportIcon,
+                    city: pickupAirports[i].city,
+                    code: pickupAirports[i].country === 'US' ? pickupAirports[i].state : pickupAirports[i].country,
+                });
+            }
         }
 
         setAutoCompleteDataPickup(tempArr);
+    // eslint-disable-next-line
     }, [ pickupCities, pickupAirports ]);
 
     useEffect(() => {
         let tempArr = [];
-        for (let i=0; i<dropCities.length; i++) {
-            tempArr.push({
-                label: dropCities[i].ar_location_name,
-                icon: CityIcon,
-                city: dropCities[i].city_name,
-                code: dropCities[i].iso2 === 'US' ? dropCities[i].state : dropCities[i].iso2,
-            });
-        }
-        for (let i=0; i<dropAirports.length; i++) {
-            tempArr.push({
-                label: dropAirports[i].full_loc,
-                icon: AirportIcon,
-                city: dropAirports[i].city,
-                code: dropAirports[i].country === 'US' ? dropAirports[i].state : dropAirports[i].country,
-            });
+
+        if (dropSearchKey.length >= 2) {
+            for (let i=0; i<dropCities.length; i++) {
+                tempArr.push({
+                    label: dropCities[i].ar_location_name,
+                    icon: CityIcon,
+                    city: dropCities[i].city_name,
+                    code: dropCities[i].iso2 === 'US' ? dropCities[i].state : dropCities[i].iso2,
+                });
+            }
+            for (let i=0; i<dropAirports.length; i++) {
+                tempArr.push({
+                    label: dropAirports[i].full_loc,
+                    icon: AirportIcon,
+                    city: dropAirports[i].city,
+                    code: dropAirports[i].country === 'US' ? dropAirports[i].state : dropAirports[i].country,
+                });
+            }
         }
 
         setAutoCompleteDataDrop(tempArr);
+    // eslint-disable-next-line
     }, [ dropCities, dropAirports ]);
 
     useEffect(() => {
@@ -303,7 +310,7 @@ const SearchForm = () => {
                                             <i className="ni ni-user-run" />
                                         </InputGroupText>
                                     </InputGroupAddon>
-                                    <Autocomplete items={autoCompleteDataDrop} value={dropVal} setValue={setDropVal}
+                                    <AutoCompleteCustom items={autoCompleteDataDrop} value={dropVal} setValue={setDropVal}
                                         setSearchKey={setDropSearchKey} setCity={setDropCity} setCode={setDropCode}
                                     />
                                 </InputGroup>
@@ -339,7 +346,7 @@ const SearchForm = () => {
                                                 <i className="ni ni-compass-04" />
                                             </InputGroupText>
                                         </InputGroupAddon>
-                                        <Autocomplete items={times} value={pickupTime} setValue={setPickupTime} />
+                                        <AutoCompleteCustom items={times} value={pickupTime} setValue={setPickupTime} />
                                     </InputGroup>
                                 </div>
                             </FormGroup>
@@ -373,7 +380,7 @@ const SearchForm = () => {
                                                 <i className="ni ni-compass-04" />
                                             </InputGroupText>
                                         </InputGroupAddon>
-                                        <Autocomplete items={times} value={dropTime} setValue={setDropTime} />
+                                        <AutoCompleteCustom items={times} value={dropTime} setValue={setDropTime} />
                                     </InputGroup>
                                 </div>
                             </FormGroup>
