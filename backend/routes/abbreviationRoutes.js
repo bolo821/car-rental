@@ -3,23 +3,28 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Abbreviation = mongoose.model('Abbreviation');
 
-router.get('/:name', (req, res) => {
-    const { name } = req.params;
-    Abbreviation.findOne({ name: name }).then(findRes => {
-        if (findRes) {
-            res.status(200).json({
-                url: findRes.url,
+router.get('/:names', async (req, res) => {
+    const namesString = req.params.names;
+    const names = namesString.split(',');
+
+    let url = [];
+    for (let i=0; i<names.length; i++) {
+        let findRes = await Abbreviation.findOne({ name: names[i] }).catch(err => {
+            res.status(500).json({
+                message: 'Internal server error: ' + err,
             });
+        });
+
+        if (findRes) {
+            url.push(findRes.url);
         } else {
-            res.status(400).json({
-                message: `Abbreviation for "${name}" not found.`,
+            return res.status(400).json({
+                message: `Abbreviation for "${names[i]}" not found.`,
             });
         }
-    }).catch(err => {
-        res.status(500).json({
-            message: 'Internal server error: ' + err,
-        });
-    });
+    }
+
+    res.status(200).json({ url });
 });
 
 router.post('/', (req, res) => {
