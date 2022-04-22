@@ -41,6 +41,9 @@ const Cities = new mongoose.Schema({
     population: {
         type: Number,
     },
+    state: {
+        type: String,
+    }
 });
 
 autoIncrement.initialize(mongoose.connection);

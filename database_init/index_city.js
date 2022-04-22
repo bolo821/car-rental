@@ -7,7 +7,7 @@ var db_string = process.env.MONGO_URL;
 require("./City");
 mongoose.connect(db_string, { useNewUrlParser: true })
 .then(() => {
-    const fileName = './cities.csv';
+    const fileName = './cities-old.csv';
     csvtojson().fromFile(fileName).then(async source => {
         for (var i = 0; i < source.length; i++) {
             var oneRow = {

@@ -16,7 +16,7 @@ const Footer = () => {
           <Row className="align-items-center justify-content-md-between">
             <Col md="6">
               <div className="copyright">
-                ©2022 AutoRental, All Rights Reserved
+                &copy;2022 AutoRentals247, All Rights Reserved
               </div>
             </Col>
             <Col md="6">

@@ -16,6 +16,7 @@ import {
 } from "reactstrap";
 import ReactDatetime from "react-datetime";
 import Autocomplete from '../../components/landing/AutoComplete';
+import AutoCompleteCustom from '../../components/landing/AutoCompleteCustom';
 import { handleSearch, saveLog, SET_PICKUP_SEARCH_RESULT, SET_DROP_SEARCH_RESULT } from '../../actions';
 import { getDateString, getTimeString, getOffsetDate } from '../../utils/helper';
 import { toast } from 'react-toastify';
@@ -40,8 +41,13 @@ const SearchForm = () => {
     const [ showDrop, setShowDrop ] = useState(false);
     const [ pickupSearchKey, setPickupSearchKey ] = useState('');
     const [ pickupVal, setPickupVal ] = useState('');
+    const [ pickupCity, setPickupCity ] = useState('');
+    const [ pickupCode, setPickupCode ] = useState('');
+
     const [ dropSearchKey, setDropSearchKey ] = useState('');
     const [ dropVal, setDropVal ] = useState('');
+    const [ dropCity, setDropCity ] = useState('');
+    const [ dropCode, setDropCode ] = useState('');
     const [ autoCompleteDataPickup, setAutoCompleteDataPickup ] = useState([]);
     const [ autoCompleteDataDrop, setAutoCompleteDataDrop ] = useState([]);
 
@@ -105,12 +111,16 @@ const SearchForm = () => {
             tempArr.push({
                 label: pickupCities[i].ar_location_name,
                 icon: CityIcon,
+                city: pickupCities[i].city_name,
+                code: pickupCities[i].iso2 === 'US' ? pickupCities[i].state : pickupCities[i].iso2,
             });
         }
         for (let i=0; i<pickupAirports.length; i++) {
             tempArr.push({
                 label: pickupAirports[i].full_loc,
                 icon: AirportIcon,
+                city: pickupAirports[i].city,
+                code: pickupAirports[i].country === 'US' ? pickupAirports[i].state : pickupAirports[i].country,
             });
         }
 
@@ -123,12 +133,16 @@ const SearchForm = () => {
             tempArr.push({
                 label: dropCities[i].ar_location_name,
                 icon: CityIcon,
+                city: dropCities[i].city_name,
+                code: dropCities[i].iso2 === 'US' ? dropCities[i].state : dropCities[i].iso2,
             });
         }
         for (let i=0; i<dropAirports.length; i++) {
             tempArr.push({
                 label: dropAirports[i].full_loc,
                 icon: AirportIcon,
+                city: dropAirports[i].city,
+                code: dropAirports[i].country === 'US' ? dropAirports[i].state : dropAirports[i].country,
             });
         }
 
@@ -219,10 +233,10 @@ const SearchForm = () => {
                 let redirectData = {
                     l1: l1,
                     l2: l2,
-                    pickupVal: pickupVal,
-                    dropVal: dropVal,
-                    pickupDate: pickupTime !== '' ? `${pickupDate} ${pickupTime}` : `${pickupDate} 00:00:00`,
-                    dropDate: dropTime !== '' ? `${dropDate} ${dropTime}` : `${dropDate} 23:59:59`,
+                    pickupVal: `${pickupCity.replace(' ', '-')},${pickupCode}`,
+                    dropVal: showDrop ? `${dropCity.replace(' ', '-')},${dropCode}` : null,
+                    pickupDate: `${pickupDate}-${pickupTime.substring(0, 2)}h`,
+                    dropDate: `${dropDate}-${dropTime.substring(0, 2)}h`,
                 }
         
                 dispatch(saveLog({ sendData, redirectData }));
@@ -268,8 +282,8 @@ const SearchForm = () => {
                                             <i className="ni ni-user-run" />
                                         </InputGroupText>
                                     </InputGroupAddon>
-                                    <Autocomplete items={autoCompleteDataPickup} value={pickupVal} setValue={setPickupVal} 
-                                        setSearchKey={val => {setPickupSearchKey(val)}}
+                                    <AutoCompleteCustom items={autoCompleteDataPickup} value={pickupVal} setValue={setPickupVal} 
+                                        setSearchKey={setPickupSearchKey} setCity={setPickupCity} setCode={setPickupCode}
                                     />
                                 </InputGroup>
                             </FormGroup>
@@ -290,7 +304,7 @@ const SearchForm = () => {
                                         </InputGroupText>
                                     </InputGroupAddon>
                                     <Autocomplete items={autoCompleteDataDrop} value={dropVal} setValue={setDropVal}
-                                        setSearchKey={val => {setDropSearchKey(val)}}
+                                        setSearchKey={setDropSearchKey} setCity={setDropCity} setCode={setDropCode}
                                     />
                                 </InputGroup>
                             </FormGroup>

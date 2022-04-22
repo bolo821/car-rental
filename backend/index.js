@@ -15,6 +15,7 @@ require('./models/Airport');
 require('./models/City');
 require('./models/Log');
 require('./models/Abbreviation');
+require('./models/Email');
 
 mongoose.connect(db_string, { useNewUrlParser: true })
 .then(() => {
@@ -27,9 +28,11 @@ app.use(cors());
 const search = require('./routes/searchRoutes');
 const log = require('./routes/logRoutes');
 const abbreviation = require('./routes/abbreviationRoutes');
+const email = require('./routes/emailRoutes');
 app.use('/api/search', search);
 app.use('/api/log', log);
 app.use('/api/abbreviation', abbreviation);
+app.use('/api/email', email);
 
 let PORT = process.env.PORT;
 if (MODE === 'production') {

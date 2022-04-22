@@ -2,7 +2,7 @@ import React from 'react';
 import Autocomplete from 'react-autocomplete';
 
 const AutoComplete = props => {
-    const { items, value, setValue, setSearchKey } = props;
+    const { items, value, setValue, setSearchKey, setCity, setCode } = props;
 
     return (
         <Autocomplete
@@ -22,7 +22,7 @@ const AutoComplete = props => {
             }
             value={value}
             onChange={(e) => {setValue(e.target.value); setSearchKey && setSearchKey(e.target.value)}}
-            onSelect={(val) => {setValue(val)}}
+            onSelect={(val, item) => {setValue(val); setCity && setCity(item.city); setCode && setCode(item.code)}}
             wrapperStyle = {{
                 width: '1%',
                 flex: '1 1 auto',
