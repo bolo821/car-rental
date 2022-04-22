@@ -40,7 +40,7 @@ const AutoCompleteCustom = props => {
                                 { item.icon &&
                                     <img src={item.icon} alt="ico" height="20px" className='mr-2' />
                                 }
-                                {item.label}
+                                <span>{item.label}</span>
                             </li>
                         )}
                         
