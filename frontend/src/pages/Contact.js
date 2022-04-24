@@ -19,11 +19,6 @@ const Contact = () => {
                             <p>
                                 <a className='text-black' href="mailto:info@save268.com">info@save268.com</a>
                             </p>
-                            <p>
-                                <span className='d-block'>114 Hayarkon Street</span>
-                                <span className='d-block'>Tel Aviv, Israel</span>
-                                <span className='d-block'>6357302</span>
-                            </p>
                         </Col>
                     </Row>
                     <Row>
