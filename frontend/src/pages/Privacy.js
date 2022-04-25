@@ -8,9 +8,9 @@ const Privacy = () => {
                 <Container className="privacy-container-rt">
                     <Row>
                         <Col>
-                            <h1>Save268.com - Privacy Policy</h1>
+                            <h1>Privacy Policy</h1>
                             <p>
-                                We, Cricket Traveling Ltd, are committed to protecting and respecting your privacy and we make it our highest priority to safeguard the confidentiality of any and all personal information you provide to us.
+                                We, AutoRentals247, are committed to protecting and respecting your privacy and we make it our highest priority to safeguard the confidentiality of any and all personal information you provide to us.
                             </p>
                             <p>
                                 This policy sets out the approach that we take to the collection and handling of any such information and applies to all websites, mobile apps and other services operated by us such as newsletters (the "Services").
@@ -26,7 +26,7 @@ const Privacy = () => {
                     <Row>
                         <Col>
                             <h3>
-                                What kind of information we collect?
+                                What kind of information do we collect?
                             </h3>
                             <p>
                                 Most information that we collect from you is linked to non-personal identifiers such as anonymous User IDs or device IDs, and does not enable you to be identified as an individual in the offline world ("Non-Personal Information"). Such Non-Personal Information includes things like your browser type, the type of device you are using, access times, the features or functionality you selected whilst using the Services and your general geographic location. As a rule, we will analyze this Non-Personal Information only statistically in order to prevent errors and to improve our Services.
@@ -87,7 +87,7 @@ const Privacy = () => {
                         <Col>
                             <h3>Do any third parties collect information about me when I use the Services?</h3>
                             <p>
-                                Yes, when you make a booking with a third party travel provider to which you are referred to from our website. Note that any information you submit as part of the booking process may be collected by that third party in order to process the booking. Your information will be used by those third parties in accordance with their own terms and conditions and privacy policy, a link to which will be provided to you during the booking process.
+                                Yes, where you make a booking with a third party travel provider to which you are referred to from our website. Note that any information you submit as part of the booking process may be collected by that third party in order to process the booking. Your information will be used by those third parties in accordance with their own terms and conditions and privacy policy, a link to which will be provided to you during the booking process.
                             </p>
                             <p>
                                 In addition, third party advertisement services may collect Non-Personal Information from you as you use the Services via cookies and other similar technologies. This information enables you to be served with relevant advertisements, both on the Services and on third party websites and applications around the web. Further information about the use of such technologies, and how to stop them, is set out in the "How do we use cookies and other tracking technologies?" section below.
@@ -133,13 +133,16 @@ const Privacy = () => {
                     <hr />
                     <Row>
                         <Col>
-                            <h1>Cookies</h1>
                             <h3>Do we use Cookies?</h3>
                             <p>
                                 A cookie is a small file, typically of letters and numbers, downloaded on to a device when the user accesses certain websites. Cookies are then sent back to originating website on each subsequent visit. Cookies are useful because they allow a website to recognize a user"s web browser or device.
                             </p>
                             <p>
                                 We use a combination of cookies and similar tracking technologies to collect, in line with this policy, Non-Personal Information from you relating to how you are using the Services. The primary purpose for our use of cookies is to ensure the optimal delivery of our services. In addition, we use third party cookies for statistics and to analyze user behavior.
+                            </p>
+                            <h3>How can you choose to opt-out?</h3>
+                            <p>
+                                Your browser may give you the ability to block or delete cookies should you wish to do so. Please see the ‘Help’ menu in your browser for further information. Please note that blocking all cookies will have a negative impact upon the usability of many websites, including our own. We therefore recommend that you permit the use of cookies when using our websites.
                             </p>
                         </Col>
                     </Row>
@@ -164,181 +167,48 @@ const Privacy = () => {
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Essential Cookies</td>
+                                        <td>Essential</td>
                                         <td>
                                             Essential cookies, as their name suggests, are vital to the proper functioning of the website. They enable us to remember your selections between pages, such as routes, dates and the number of travellers, meaning we can pass that information on to our booking partners without you ever having to re-enter it.
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Performance / User Experience Cookies</td>
+                                        <td>Performance / User Experience</td>
                                         <td>
-                                            make sure the correct results are being delivered in accordance with your selections. We also use cookies to heighten your experience by recognizing whether you are a first time visitor and remembering your preferences (such as language or currency type) and previous searches.
+                                            We use cookies to make sure our website performs as it needs to, and to make sure the correct results are being delivered in accordance with your selections. We also use cookies to heighten your experience by recognizing whether you are a first-time visitor and remembering your preferences (such as language or currency type) and previous searches.
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Advertising Cookies (third party cookies)</td>
+                                        <td>Optimization</td>
                                         <td>
-                                            <p>Our website serves advertisements that are relevant to you by displaying interest-based advertisements. We also use advertising solutions delivered by third parties (such as: ADARA, SmarterTravel Media, Intent Media, MediaAlpha, Google DoubleClick for Publishers (DFP), Google Adsense for Search (AFS), SalesForceDMP, etc.) to serve you advertisements relating to the Services when you are on other websites.</p>
-                                            <p>These tailored advertisements are served by third parties using cookies which will track your behavior across the web, using anonymous statistical rather than personally identifiable information, including information relating to your use of the Services, your location and demographic characteristics. Third party advertisers may also use cookies, for such purposes of ensuring relevant advertisements are being displayed, to help prevent the same adverts being served twice to the same user, and to ensure that adverts are correctly sized and don't detract from your experience of the site.</p>
+                                            <p>Optimization cookies allow us to see and track anonymous user data such as click trends, so we can be certain the site offers you a consistently smooth, functional, and pleasant experience.</p>
+                                            <p>Our website serves advertisements that are relevant to you by displaying interest-based advertisements. We also use advertising solutions delivered by third parties (such as: ADARA Google DoubleClick for Publishers (DFP), Google Adsense for Search (AFS), SalesForceDMP, etc.)  to serve you advertisements relating to the Services when you are on other websites.</p>
+                                            <p>These tailored advertisements are served by third parties using cookies which will track your behaviour across the web, using anonymous statistical rather than personally identifiable information, including information relating to your use of the Services, your location and demographic characteristics. Third party advertisers may also use cookies, for such purposes of ensuring relevant advertisements are being displayed, to help prevent the same adverts being served twice to the same user, and to ensure that adverts are correctly sized and don’t detract from your experience of the site.</p>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Analytics Cookies (third party cookies)</td>
+                                        <td>Advertising</td>
                                         <td>
-                                            We also use cookies to monitor and understand more about how our websites and services are used and accessed, which in turn lets us optimize the user experience and build a website that suits the needs of our users and drive the direction of our business. We use Google Analytics who store cookies on your device to generate anonymous reports and statistics.Google stores this information in accordance with their privacy policy.
+                                            <h3 className='text-underline'>Opt out</h3>
+                                            <p>You can opt-out of third-party advertising networks using your information for interest-based advertising. To learn more about targeted advertising and how you can accept or refuse (opt-out of) this type of advertisements, we recommend that you visit <a href="www.aboutads.info/choices">www.aboutads.info/choices</a> or <a href="www.aboutads.info/choices">www.aboutads.info/choices</a>.</p>
+                                            <p>You will need to opt-out on each device you use to access the Service.</p>
+                                            <p>Your information will not be shared with our third-party advertising network partners for the purpose interest-based advertising if you opt-out, however, you will continue to receive interest-based advertising from us when using the Services.</p>
+                                            <p>Please note these opt-out mechanisms use a cookie on your device, and if you clear the cookies from your browser, it will ‘forget’ the opt-out.</p>
+                                            <p>We also use cookies to monitor and understand more about how our websites and services are used and accessed, which in turn lets us optimize the user experience and build a website that suits the needs of our users and drive the direction of our business.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Analytics</td>
+                                        <td>
+                                            <p>We use Google Analytics who store cookies on your device to generate anonymous reports and statistics.</p>
+                                            <p>Google stores this information in accordance with their <a href="https://www.google.com/privacypolicy.html">privacy policy</a>.</p>
+                                            <p>We also use <a href="https://www.appdynamics.com/">AppDynamics</a> for analytics information on our website performance.</p>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col>
-                            <h3>How can I withdraw my consent to the use of cookies?</h3>
-
-                            <h4>Withdrawing consent using your browser or device settings</h4>
-                            <p>
-                                Your browser may give you the ability to block or delete cookies should you wish to do so. Please see the "Help" menu in your browser for further information. Please note that blocking all cookies will have a negative impact upon the usability of many websites, including our own.Guides on how to access and use such functionality are available at 
-                                &nbsp;<a href="https://www.aboutcookies.org">https://www.aboutcookies.org</a>
-                            </p>
-                            <p>
-                                We therefore recommend that you will take a more targeted approach to withdrawing your consent. For example, if you wanted stop Cookies being used in our website for the purposes of serving you interest-based advertisements in our Site, then instead of blocking all cookies, you could instead opt-out of these on a case-by-case basis following the steps set out below.
-                            </p>
-                            <p>
-                                Please note these opt-out mechanisms might use a cookie on your device, and if you clear the cookies from your browser it might "forget" the opt-out. In addition, please note that you will need to opt-out on each device you use to access our services.
-                            </p>
-
-                            <h4>Opt-out of third party advertising via Cookies</h4>
-                            <p>
-                                Below you can find out how to stop your information being used by each one of the third party providers we've partnered with for these purposes on a case-by-case basis:
-                            </p>
-
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Third Party Provider</th>
-                                        <th>Opt-out details</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Intent</td>
-                                        <td>You can set an Intent Media opt-out cookier at <a href="https://intentmedia.com/opt-out/">https://intentmedia.com/opt-out/</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Media Alpha</td>
-                                        <td>You can follow the instructions for app and web/mobile web on this page: 
-                                            <a href="https://www.facebook.com/help/568137493302217">https://www.facebook.com/help/568137493302217</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Smarter Travel (Booking Buddy)</td>
-                                        <td>
-                                            For more information: <a href="https://www.bookingbuddy.com/en-US/legal/">https://www.bookingbuddy.com/en-US/legal/</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Adara</td>
-                                        <td>For more information: <a href="http://go.adara.com/e/414092/privacy-promise/n7ygt2/548309909">http://go.adara.com/e/414092/privacy-promise/n7ygt2/548309909</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>SkyScanner</td>
-                                        <td>
-                                            <span className="d-block">For more information:</span>
-                                            <span className="d-block">Privacy Policy: 
-                                                <a href="https://www.skyscanner.co.il/media/privacypolicy">https://www.skyscanner.co.il/media/privacypolicy</a>
-                                            </span>
-                                            <span className="d-block">Cookie Policy: 
-                                                <a href="https://www.skyscanner.co.il/media/cookie-policy">https://www.skyscanner.co.il/media/cookie-policy</a>
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Booking.com</td>
-                                        <td>
-                                            <span className="d-block">For more information:</span>
-                                            <span className="d-block">Privacy Policy: 
-                                                <a href="https://www.booking.com/content/privacy.html">https://www.booking.com/content/privacy.html</a>
-                                            </span>
-                                            <span className='d-block'>
-                                                Cookie Statement: <a href="https://www.booking.com/content/privacy.html#cookie-statement">https://www.booking.com/content/privacy.html#cookie-statement</a>
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Rentalcars</td>
-                                        <td>You can opt-out here: <a href="https://www.rentalcars.com/CookiePortal.do">https://www.rentalcars.com/CookiePortal.do</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Google Adsense</td>
-                                        <td>
-                                            You can install a browser plugin to maintain your preference to opt out of personalized ads from Google, even if you've cleared your cookies. 
-                                            <a href="https://support.google.com/ads/answer/7395996?hl=en">Learn how</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Dunhill Travel Deals</td>
-                                        <td>For more information: <a href="https://www.dunhilltraveldeals.com/info/privacy.php">https://www.dunhilltraveldeals.com/info/privacy.php</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Trvaelzoo</td>
-                                        <td>For more information: <a href="https://www.travelzoo.com/privacy/">https://www.travelzoo.com/privacy</a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            
-                            <h4>Opt-out of Analytics Cookies</h4>
-                            <p>Below you can find out how to stop your information being used by each one of the third party providers we've partnered with for these purposes on a case-by-case basis:</p>
-
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Third Party Provider</th>
-                                        <th>Opt-out details</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Facebook</td>
-                                        <td>You can follow the instructions for app and web/mobile web on this page: 
-                                            <a href="https://www.facebook.com/help/568137493302217">https://www.facebook.com/help/568137493302217</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Google</td>
-                                        <td>You can opt-out on: <a href="https://adssettings.google.com/">https://adssettings.google.com/</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bing</td>
-                                        <td>You can opt-out on: <a href="https://choice.microsoft.com/">https://choice.microsoft.com/</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Yahoo</td>
-                                        <td>You can opt-out on: <a href="https://aim.yahoo.com/aim/us/en/optout/">https://aim.yahoo.com/aim/us/en/optout/</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Twitter</td>
-                                        <td>For more information: <a href="https://help.twitter.com/en/safety-and-security/privacy-controls-for-tailored-ads">https://help.twitter.com/en/safety-and-security/privacy-controls-for-tailored-ads</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Taboola</td>
-                                        <td><span className="d-block">For more information <a href="https://www.taboola.com/cookie-policy">https://www.taboola.com/cookie-policy</a></span>
-                                            <span className="d-block">You can opt-out on:</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Outbrain</td>
-                                        <td>For more information <a href="https://www.outbrain.com/legal/privacy">https://www.outbrain.com/legal/privacy</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Yandex</td>
-                                        <td>You can opt-out on: <a href="https://yandex.ru/tune/adv/">https://yandex.ru/tune/adv/</a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </Col>
-                    </Row>
-                    <hr />
                     <Row>
                         <Col>
                             <h3>Do we collect Personal Information from minors?</h3>
@@ -351,18 +221,9 @@ const Privacy = () => {
                         <Col>
                             <h3>How can I access or manage my Personal Information?</h3>
                             <p>
-                                You are entitled at any time to obtain information about all your Personal Information that we store, in accordance with applicable law and without any fee. However, in exceptional cases we ask you to pay reasonable fee before we provide the information if permitted by applicable law. Please note that Personal Information is only collected when a user chooses to register to our newsletter.
+                                You are entitled at any time to obtain information about all your Personal Information that we store, in accordance with applicable law and without any fee. However, in exceptional cases we ask you to pay reasonable fee before we provide the information if permitted by applicable law. Please note that Personal Information is only collected when a user chooses to register to our newsletter. We may request proof of your identity before providing this information. We may not be able to allow you to access certain Personal Information in some cases. For example, if your Personal information relates to personal information of other persons, or for legal reasons. In such cases we will provide you with an explanation why you cannot obtain this information. You can also withdraw your consent to the use of your personal information and/or demand deletion or rectification of your personal information at any time by contacting us at the address below.
                             </p>
-                            <p>
-                                We may request proof of your identity before providing this information. We may not be able to allow you to access certain Personal Information in some cases. For example, if your Personal information is connected with personal information of other persons, or for legal reasons. In such cases we will provide you with an explanation why you cannot obtain this information.
-                            </p>
-                            <p>
-                                You can also withdraw your consent to the use of your personal information and/or demand deletion or rectification of your personal information at any time by contacting us at the address below.
-                            </p>
-                            <p>
-                                To exercise your rights, or if you have questions about our privacy practices or need assistance with exercising or understanding your privacy choices, please contact our Data Protection Officer at 
-                                <a href="privacy@save268.com">privacy@save268.com</a> or you may write to: <a href="info@save268.com">info@save268.com</a>
-                            </p>
+                            <p>To exercise your rights, or if you have questions about our privacy practices or need assistance with exercising or understanding your privacy choices, please contact our Privacy Officer at <a href="mailto:office@AutoRentals247.com">office@AutoRentals247.com</a>.</p>
                         </Col>
                     </Row>
                 </Container>
