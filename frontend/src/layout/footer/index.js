@@ -34,7 +34,7 @@ const Footer = () => {
                   <Link to="/privacy" className="footer-link-rt">Privacy policy</Link>
                 </NavItem>
                 <NavItem>
-                  <Link to="terms" className="footer-link-rt">Terms and conditions</Link>
+                  <Link to="/terms" className="footer-link-rt">Terms and conditions</Link>
                 </NavItem>
               </Nav>
             </Col>
