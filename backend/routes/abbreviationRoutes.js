@@ -18,9 +18,7 @@ router.get('/:names', async (req, res) => {
         if (findRes) {
             url.push(findRes.url);
         } else {
-            return res.status(400).json({
-                message: `Abbreviation for "${names[i]}" not found.`,
-            });
+            url.push(null);
         }
     }
 

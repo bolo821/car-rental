@@ -13,6 +13,7 @@ export const saveLog = data => async dispatch => {
             link1 = link.data.url[0];
             link2 = link.data.url[1];
         }
+        if (!link1) link1 = 'https://kayak.com';
 
         let url = `${link1}?a=kan_242297&enc_cid=${data.sendData.clickid}&url=/cars/${pickupVal}${dropVal ? '/' + dropVal : ''}/${pickupDate}/${dropDate}`;
         // window.open(url, '_blank');
