@@ -93,7 +93,7 @@ const DemoNavbar = () => {
                   </NavLink>
                 </NavItem>
                 {
-                  history.location.pathname.includes('clickid') &&
+                  (history.location.pathname.includes('clickid') || history.location.pathname === '/') &&
                   <>
                     <NavItem>
                       <NavLink

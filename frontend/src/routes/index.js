@@ -20,12 +20,13 @@ const Routes = () => {
         <>
             <Navbar />
             <Switch>
+                <Route exact path="/" component={Landing} />
                 <Route exact path="/about" component={About} />
                 <Route exact path="/contact" component={Contact} />
                 <Route exact path="/privacy" component={Privacy} />
                 <Route exact path="/terms" component={Terms} />
                 <Route path="/:param" component={Landing} />
-                <Redirect to={`/clickid=123&l1=kay&l2=ggle&keyword=keyword`} />
+                <Redirect to={`/`} />
             </Switch>
             <Footer />
         </>

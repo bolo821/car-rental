@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import {
     Button,
     Card,
@@ -25,7 +25,7 @@ import CityIcon from '../../assets/img/city_icon.svg';
 
 const SearchForm = () => {
     const dispatch = useDispatch();
-    const { param } = useParams();
+    const history = useHistory();
     
     const [ clickid, setClickid ] = useState('');
     const [ l1, setL1 ] = useState('');
@@ -62,17 +62,22 @@ const SearchForm = () => {
     }
 
     useEffect(() => {
-        let params = param.split('&');
-        for (let i=0; i<params.length; i++) {
-            let key = params[i].split('=')[0];
-            let val = params[i].split('=')[1];
-
-            if (key === 'clickid') setClickid(val);
-            else if (key === 'l1') setL1(val);
-            else if (key === 'l2') setL2(val);
-            else if (key === 'keyword') setKeyword(val);
+        if (history.location.search) {
+            let param = history.location.search.substring(1, history.location.search.length);
+            let params = param.split('&');
+            for (let i=0; i<params.length; i++) {
+                let key = params[i].split('=')[0];
+                let val = params[i].split('=')[1];
+    
+                if (key === 'clickid') setClickid(val);
+                else if (key === 'l1') setL1(val);
+                else if (key === 'l2') setL2(val);
+                else if (key === 'keyword') setKeyword(val);
+            }
+        } else {
+            history.push('/');
         }
-    }, [ param ]);
+    }, [ history ]);
 
     useEffect(() => {
         if (pickupSearchKey.length >= 2) {
