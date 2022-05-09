@@ -27,7 +27,7 @@ const SearchForm = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     
-    const [ clickid, setClickid ] = useState('');
+    const [ gclid, setGclid ] = useState('');
     const [ l1, setL1 ] = useState('');
     const [ l2, setL2 ] = useState('');
     const [ keyword, setKeyword ] = useState('');
@@ -69,7 +69,7 @@ const SearchForm = () => {
                 let key = params[i].split('=')[0];
                 let val = params[i].split('=')[1];
     
-                if (key === 'clickid') setClickid(val);
+                if (key === 'gclid') setGclid(val);
                 else if (key === 'l1') setL1(val);
                 else if (key === 'l2') setL2(val);
                 else if (key === 'keyword') setKeyword(val);
@@ -229,7 +229,7 @@ const SearchForm = () => {
         switch (validate()) {
             case 100: {
                 let sendData = {
-                    clickid: clickid,
+                    gclid: gclid,
                     keyword: keyword,
                     pickup: {
                         searchKey: pickupSearchKey,

@@ -8,7 +8,7 @@ const Logs = new mongoose.Schema({
     country: {
         type: String,
     },
-    clickid: {
+    gclid: {
         type: String,
     },
     keyword: {

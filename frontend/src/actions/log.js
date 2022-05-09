@@ -22,9 +22,9 @@ export const saveLog = data => async dispatch => {
         link1 = link.data.url[0];
         link2 = link.data.url[1];
 
-        if (data.sendData.clickid === '') data.sendData = { ...data.sendData, clickid: 'gclid' };
+        if (data.sendData.gclid === '') data.sendData = { ...data.sendData, gclid: '12345' };
 
-        let url = `${link1}/in?a=kan_242297&enc_cid=${data.sendData.clickid}&url=/cars/${pickupVal}${dropVal ? '/' + dropVal : ''}/${pickupDate}/${dropDate}`;
+        let url = `${link1}/in?a=kan_242297&enc_cid=${data.sendData.gclid}&url=/cars/${pickupVal}${dropVal ? '/' + dropVal : ''}/${pickupDate}/${dropDate}`;
         windowReference.location = url;
         
         api.post('/log', data.sendData);
