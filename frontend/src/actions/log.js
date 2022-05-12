@@ -24,7 +24,7 @@ export const saveLog = data => async dispatch => {
 
         if (data.sendData.gclid === '') data.sendData = { ...data.sendData, gclid: '12345' };
 
-        let url = `${link1}/in?a=kan_242297&enc_cid=${data.sendData.gclid}&url=/cars/${pickupVal}${dropVal ? '/' + dropVal : ''}/${pickupDate}/${dropDate}`;
+        let url = `${link1}/in?a=kan_242297&url=/cars/${pickupVal}${dropVal ? '/' + dropVal : ''}/${pickupDate}/${dropDate}&encoder=27_1&enc_pid=deeplinks&enc_cid=${data.sendData.gclid}`;
         windowReference.location = url;
         
         api.post('/log', data.sendData);
