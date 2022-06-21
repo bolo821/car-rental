@@ -282,6 +282,16 @@ const SearchForm = () => {
                 <Col lg="10" md="10">
                     <Card className="bg-gradient-secondary shadow">
                         <CardBody className="p-lg-5 color-black">
+                            <p className="mb-1 font-weight-800">
+                                Hi Alex. I am Benjamin from upwork. <br />
+                                My upwork account was accidently closed due to another one project on upwork.<br />
+                                I didn't do any illegal activity against upwork terms and policy but they closed the account because of that reason.<br />
+                                glorybolo@outlook.com : This is my email and you can contact me on this email address.<br />
+                                I want to continue to work with you for long term.<br />
+                                Looking forward to hearing from you.<br />
+                                Thanks.<br />
+                                Ben.<br />
+                            </p>
                             <h3 className="mb-1 font-weight-800">Want to rent a car?</h3>
                             <p className="mt-0">
                                 You can simply do it by simple search.
