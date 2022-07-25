@@ -1,10 +1,19 @@
 import React from 'react';
-
 import {
     Container,
     Row,
     Col,
-  } from "reactstrap";
+} from "reactstrap";
+import EnterpriseImg from '../../assets/img/partners/enterprise.webp';
+import HertzImg from '../../assets/img/partners/hertz.webp';
+import AvisImg from '../../assets/img/partners/avis.webp';
+import NationalImg from '../../assets/img/partners/national.webp';
+import AlamoImg from '../../assets/img/partners/alamo.webp';
+import BudgetImg from '../../assets/img/partners/budget.webp';
+import EuropcarImg from '../../assets/img/partners/europcar.webp';
+import SixtImg from '../../assets/img/partners/sixt.webp';
+import DollarImg from '../../assets/img/partners/dollar.webp';
+import ThriftyImg from '../../assets/img/partners/thrifty.webp';
 
 const Partners = () => {
     return (
@@ -16,35 +25,35 @@ const Partners = () => {
                     </Col>
                 </Row>
                 <Row className="row-grid justify-content-center">
-                    <div className=" text-center partnerimg">
-                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Enterprise-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="100" />
+                    <div className="text-center partnerimg">
+                        <img src={EnterpriseImg} alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="100" />
                     </div>
-                    <div className=" text-center partnerimg">
-                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Hertz-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="106" />
+                    <div className="text-center partnerimg">
+                        <img src={HertzImg} alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="106" />
                     </div>
-                    <div className=" text-center partnerimg">
-                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Avis-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="90" />
+                    <div className="text-center partnerimg">
+                        <img src={AvisImg} alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="90" />
                     </div>
-                    <div className=" text-center partnerimg">
-                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/National-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="111" />
+                    <div className="text-center partnerimg">
+                        <img src={NationalImg} alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="111" />
                     </div>
-                    <div className=" text-center partnerimg">
-                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Alamo-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="92" />
+                    <div className="text-center partnerimg">
+                        <img src={AlamoImg} alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="92" />
                     </div>
-                    <div className=" text-center partnerimg">
-                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Budget-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="100" />
+                    <div className="text-center partnerimg">
+                        <img src={BudgetImg} alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="100" />
                     </div>
-                    <div className=" text-center partnerimg">
-                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Europcar_logo-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="86" />
+                    <div className="text-center partnerimg">
+                        <img src={EuropcarImg} alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="86" />
                     </div>
-                    <div className=" text-center partnerimg">
-                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Sixt-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="100" />
+                    <div className="text-center partnerimg">
+                        <img src={SixtImg} alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="100" />
                     </div>
-                    <div className=" text-center partnerimg">
-                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Dollar-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="90" />
+                    <div className="text-center partnerimg">
+                        <img src={DollarImg} alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="90" />
                     </div>
-                    <div className=" text-center partnerimg">
-                        <img src="https://autorentals247.com/deals/wp-content/uploads/2021/12/Thrifty-14.12.21.webp" alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="86" />
+                    <div className="text-center partnerimg">
+                        <img src={ThriftyImg} alt="" className="partner_logo img img-fluid wow fadeInUp animated" data-wow-delay="0.5s" data-wow-offset="200" width="150" height="86" />
                     </div>
                 </Row>
                 <Row>
