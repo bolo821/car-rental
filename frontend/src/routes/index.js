@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Route, Switch, Redirect, useHistory } from "react-router-dom";
 
 import Landing from "../pages/landing";
+import Landing1 from '../pages/landing1';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
 import Privacy from '../pages/Privacy';
@@ -21,6 +22,8 @@ const Routes = () => {
             <Navbar />
             <Switch>
                 <Route exact path="/" component={Landing} />
+                <Route exact path="/new" component={Landing1} />
+                <Route exact path="/new/:param" component={Landing1} />
                 <Route exact path="/about" component={About} />
                 <Route exact path="/contact" component={Contact} />
                 <Route exact path="/privacy" component={Privacy} />

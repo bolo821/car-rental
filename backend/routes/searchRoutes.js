@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Airport = mongoose.model('Airports');
 const City = mongoose.model('Cities');
+const axios = require('axios');
 
 router.get('/:searchKey', async (req, res) => {
     const { searchKey } = req.params;
@@ -57,5 +58,36 @@ router.get('/:searchKey', async (req, res) => {
     }
 });
 
+router.post('/', async (req, res) => {
+    const { searchKey } = req.body;
+
+    let data = {
+        'lc': 'en',
+        'cc': 'us',
+        'where': searchKey,
+        'locationType': 'city'
+    }
+
+    let header = {
+        'pragma': 'no-cache',
+        'cache-control': 'no-cache',
+        'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="99", "Google Chrome";v="99"',
+        'content-type': 'application/json; charset=UTF-8',
+        'x-requested-with': 'XMLHttpRequest',
+        'sec-ch-ua-mobile': '?0'
+    }
+
+    try {
+        const searchRes = await axios.post('https://www.kayak.com/search-widget/auto-complete', data, { headers: header });
+        if (searchRes) {
+            res.status(200).json(searchRes.data.content);
+        } else {
+            res.status(200).json([]);
+        }
+    } catch (err) {
+        console.log('error in search using kayak: ', err);
+        res.status(500).json({ error: err });
+    }
+});
 
 module.exports = router;
