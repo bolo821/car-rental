@@ -65,7 +65,7 @@ router.post('/', async (req, res) => {
         'lc': 'en',
         'cc': 'us',
         'where': searchKey,
-        'locationType': 'city'
+        'locationType': 81
     }
 
     let header = {

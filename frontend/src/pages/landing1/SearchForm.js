@@ -26,6 +26,7 @@ import { getDateString, getTimeString, getOffsetDate } from '../../utils/helper'
 import { toast } from 'react-toastify';
 import { times, /*cars*/ } from './data';
 import CityIcon from '../../assets/img/city_icon.svg';
+import AirportIcon from '../../assets/img/airplane_icon.svg';
 
 const SearchForm = () => {
     const dispatch = useDispatch();
@@ -112,7 +113,7 @@ const SearchForm = () => {
             for (let i=0; i<pickupCities.length; i++) {
                 tempArr.push({
                     label: pickupCities[i].displayName,
-                    icon: CityIcon,
+                    icon: pickupCities[i].locType === 'city' ? CityIcon : AirportIcon,
                     city: pickupCities[i].cityName,
                     code: pickupCities[i].cc === 'US' ? pickupCities[i].rc : pickupCities[i].cc,
                 });
@@ -130,7 +131,7 @@ const SearchForm = () => {
             for (let i=0; i<dropCities.length; i++) {
                 tempArr.push({
                     label: dropCities[i].displayName,
-                    icon: CityIcon,
+                    icon: pickupCities[i].locType === 'city' ? CityIcon : AirportIcon,
                     city: dropCities[i].cityName,
                     code: dropCities[i].cc === 'US' ? dropCities[i].rc : dropCities[i].cc,
                 });
