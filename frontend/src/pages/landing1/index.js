@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 
 import SearchForm from "./SearchForm.js";
-import Partners from "./Partners.js";
-import Contact from "./Contact.js";
+import Partners from "../landing/Partners.js";
+import Contact from "../landing/Contact.js";
 
 const Landing = () => {
   useEffect(() => {
