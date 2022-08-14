@@ -52,9 +52,9 @@ const SearchForm = () => {
     const [ dropCtid, setDropCtid ] = useState('');
     const [ autoCompleteDataDrop, setAutoCompleteDataDrop ] = useState([]);
 
-    const [ pickupDate, setPickupDate ] = useState(getDateString(getOffsetDate(new Date(), 28)));
+    const [ pickupDate, setPickupDate ] = useState(getDateString(getOffsetDate(new Date(), 7)));
     const [ pickupTime, setPickupTime ] = useState('10:00');
-    const [ dropDate, setDropDate ] = useState(getDateString(getOffsetDate(new Date(), 36)));
+    const [ dropDate, setDropDate ] = useState(getDateString(getOffsetDate(new Date(), 14)));
     const [ dropTime, setDropTime ] = useState('11:00');
 
     const [ showError, setShowError ] = useState(false);
@@ -251,8 +251,10 @@ const SearchForm = () => {
                     l2: l2,
                     pickupVal: pickupCtid !== '' ? `${pickupCode}-a${pickupCtid}` : `${pickupCity.replace(' ', '-')},${pickupCode}`,
                     dropVal: showDrop ? dropCtid !== '' ? `${dropCode}-a${dropCtid}` : `${dropCity.replace(' ', '-')},${dropCode}` : null,
-                    pickupDate: `${pickupDate}-${pickupTime.substring(0, 2)}h`,
-                    dropDate: `${dropDate}-${dropTime.substring(0, 2)}h`,
+                    // pickupDate: `${pickupDate}-${pickupTime.substring(0, 2)}h`,
+                    pickupDate: `${pickupDate}-12h`,
+                    // dropDate: `${dropDate}-${dropTime.substring(0, 2)}h`,
+                    dropDate: `${dropDate}-11h`,
                 }
         
                 dispatch(saveLog({ sendData, redirectData }));

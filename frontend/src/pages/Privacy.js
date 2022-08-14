@@ -10,7 +10,7 @@ const Privacy = () => {
                         <Col>
                             <h1>Privacy Policy</h1>
                             <p>
-                                We, AutoRentals247, are committed to protecting and respecting your privacy and we make it our highest priority to safeguard the confidentiality of any and all personal information you provide to us.
+                                We, Save268, are committed to protecting and respecting your privacy and we make it our highest priority to safeguard the confidentiality of any and all personal information you provide to us.
                             </p>
                             <p>
                                 This policy sets out the approach that we take to the collection and handling of any such information and applies to all websites, mobile apps and other services operated by us such as newsletters (the "Services").
@@ -223,7 +223,7 @@ const Privacy = () => {
                             <p>
                                 You are entitled at any time to obtain information about all your Personal Information that we store, in accordance with applicable law and without any fee. However, in exceptional cases we ask you to pay reasonable fee before we provide the information if permitted by applicable law. Please note that Personal Information is only collected when a user chooses to register to our newsletter. We may request proof of your identity before providing this information. We may not be able to allow you to access certain Personal Information in some cases. For example, if your Personal information relates to personal information of other persons, or for legal reasons. In such cases we will provide you with an explanation why you cannot obtain this information. You can also withdraw your consent to the use of your personal information and/or demand deletion or rectification of your personal information at any time by contacting us at the address below.
                             </p>
-                            <p>To exercise your rights, or if you have questions about our privacy practices or need assistance with exercising or understanding your privacy choices, please contact our Privacy Officer at <a href="mailto:office@AutoRentals247.com">office@AutoRentals247.com</a>.</p>
+                            <p>To exercise your rights, or if you have questions about our privacy practices or need assistance with exercising or understanding your privacy choices, please contact our Privacy Officer at <a href="mailto:office@save268.com">office@save268.com</a>.</p>
                         </Col>
                     </Row>
                 </Container>

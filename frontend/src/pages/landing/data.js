@@ -1,5 +1,5 @@
 export const times = [
-    { label: '00:00' },
+    { label: 'Midnight' },
     { label: '01:00' },
     { label: '02:00' },
     { label: '03:00' },
@@ -11,7 +11,7 @@ export const times = [
     { label: '09:00' },
     { label: '10:00' },
     { label: '11:00' },
-    { label: '12:00' },
+    { label: 'Noon' },
     { label: '13:00' },
     { label: '14:00' },
     { label: '15:00' },
