@@ -136,6 +136,7 @@ const SearchForm = () => {
                     icon: pickupCities[i].locType === 'city' ? CityIcon : AirportIcon,
                     city: dropCities[i].cityName,
                     code: dropCities[i].locType === 'city' ? dropCities[i].cc === 'US' ? dropCities[i].rc : dropCities[i].cc : dropCities[i].ap,
+                    ctid: dropCities[i].locType === 'city' ? '' : dropCities[i].ctid,
                 });
             }
         }
