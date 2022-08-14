@@ -10,6 +10,7 @@ const AutoCompleteCustom = props => {
         if (setCity) setCity(item.city);
         if (setCode) setCode(item.code);
         if (item.ctid) setCtid(item.ctid);
+        else setCtid('');
         setShowPanel(false);
     }
 
