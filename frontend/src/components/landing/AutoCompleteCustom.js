@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const AutoCompleteCustom = props => {
-    const { items, value, setValue, setSearchKey, setCity, setCode, setCitd } = props;
+    const { items, value, setValue, setSearchKey, setCity, setCode, setCtid } = props;
     const [ showPanel, setShowPanel ] = useState(false);
     const inputRef = useRef(null);
     
@@ -9,7 +9,7 @@ const AutoCompleteCustom = props => {
         setValue(item.label); 
         if (setCity) setCity(item.city);
         if (setCode) setCode(item.code);
-        if (item.ctid) setCitd(item.ctid);
+        if (item.ctid) setCtid(item.ctid);
         setShowPanel(false);
     }
 
