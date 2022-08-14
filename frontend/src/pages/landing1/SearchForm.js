@@ -118,6 +118,7 @@ const SearchForm = () => {
                     icon: pickupCities[i].locType === 'city' ? CityIcon : AirportIcon,
                     city: pickupCities[i].cityName,
                     code: pickupCities[i].locType === 'city' ? pickupCities[i].cc === 'US' ? pickupCities[i].rc : pickupCities[i].cc : pickupCities[i].ap,
+                    ctid: pickupCities[i].locType === 'city' ? '' : pickupCities[i].ctid,
                 });
             }
         }
