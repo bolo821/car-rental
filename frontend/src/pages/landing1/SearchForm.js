@@ -134,7 +134,7 @@ const SearchForm = () => {
             for (let i=0; i<dropCities.length; i++) {
                 tempArr.push({
                     label: dropCities[i].displayName,
-                    icon: pickupCities[i].locType === 'city' ? CityIcon : AirportIcon,
+                    icon: dropCities[i].locType === 'city' ? CityIcon : AirportIcon,
                     city: dropCities[i].cityName,
                     code: dropCities[i].locType === 'city' ? dropCities[i].cc === 'US' ? dropCities[i].rc : dropCities[i].cc : dropCities[i].ap,
                     ctid: dropCities[i].locType === 'city' ? '' : dropCities[i].ctid,
@@ -260,6 +260,10 @@ const SearchForm = () => {
             }
         }
     }
+
+    console.log('list: ', autoCompleteDataPickup);
+    console.log('ctid: ', pickupCtid);
+    console.log('code: ', pickupCode);
 
     return (
         <Container>
