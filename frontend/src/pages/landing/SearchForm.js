@@ -138,9 +138,6 @@ const SearchForm = () => {
     // eslint-disable-next-line
     }, [ pickupCities, pickupAirports ]);
 
-    console.log('pickup autocomplete: ', autoCompleteDataPickup);
-    console.log('ctid: ', pickupCtid);
-
     useEffect(() => {
         let tempArr = [];
 

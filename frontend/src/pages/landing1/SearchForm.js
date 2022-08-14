@@ -45,12 +45,14 @@ const SearchForm = () => {
     const [ pickupVal, setPickupVal ] = useState('');
     const [ pickupCity, setPickupCity ] = useState('');
     const [ pickupCode, setPickupCode ] = useState('');
+    const [ pickupCtid, setPickupCtid ] = useState('');
+    const [ autoCompleteDataPickup, setAutoCompleteDataPickup ] = useState([]);
 
     const [ dropSearchKey, setDropSearchKey ] = useState('');
     const [ dropVal, setDropVal ] = useState('');
     const [ dropCity, setDropCity ] = useState('');
     const [ dropCode, setDropCode ] = useState('');
-    const [ autoCompleteDataPickup, setAutoCompleteDataPickup ] = useState([]);
+    const [ dropCtid, setDropCtid ] = useState('');
     const [ autoCompleteDataDrop, setAutoCompleteDataDrop ] = useState([]);
 
     const [ pickupDate, setPickupDate ] = useState(getDateString(getOffsetDate(new Date(), 28)));
@@ -115,7 +117,7 @@ const SearchForm = () => {
                     label: pickupCities[i].displayName,
                     icon: pickupCities[i].locType === 'city' ? CityIcon : AirportIcon,
                     city: pickupCities[i].cityName,
-                    code: pickupCities[i].cc === 'US' ? pickupCities[i].rc : pickupCities[i].cc,
+                    code: pickupCities[i].locType === 'city' ? pickupCities[i].cc === 'US' ? pickupCities[i].rc : pickupCities[i].cc : pickupCities[i].cityId,
                 });
             }
         }
@@ -133,7 +135,7 @@ const SearchForm = () => {
                     label: dropCities[i].displayName,
                     icon: pickupCities[i].locType === 'city' ? CityIcon : AirportIcon,
                     city: dropCities[i].cityName,
-                    code: dropCities[i].cc === 'US' ? dropCities[i].rc : dropCities[i].cc,
+                    code: dropCities[i].locType === 'city' ? dropCities[i].cc === 'US' ? dropCities[i].rc : dropCities[i].cc : dropCities[i].cityId,
                 });
             }
         }
@@ -226,8 +228,8 @@ const SearchForm = () => {
                 let redirectData = {
                     l1: l1,
                     l2: l2,
-                    pickupVal: `${pickupCity.replace(' ', '-')},${pickupCode}`,
-                    dropVal: showDrop ? `${dropCity.replace(' ', '-')},${dropCode}` : null,
+                    pickupVal: pickupCtid !== '' ? `${pickupCode}-a${pickupCtid}` : `${pickupCity.replace(' ', '-')},${pickupCode}`,
+                    dropVal: showDrop ? dropCtid !== '' ? `${dropCode}-a${dropCtid}` : `${dropCity.replace(' ', '-')},${dropCode}` : null,
                     pickupDate: `${pickupDate}-${pickupTime.substring(0, 2)}h`,
                     dropDate: `${dropDate}-${dropTime.substring(0, 2)}h`,
                 }
@@ -277,6 +279,7 @@ const SearchForm = () => {
                                     </InputGroupAddon>
                                     <AutoCompleteCustom items={autoCompleteDataPickup} value={pickupVal} setValue={setPickupVal} 
                                         setSearchKey={setPickupSearchKey} setCity={setPickupCity} setCode={setPickupCode}
+                                        setCtid={setPickupCtid}
                                     />
                                 </InputGroup>
                             </FormGroup>
@@ -298,6 +301,7 @@ const SearchForm = () => {
                                     </InputGroupAddon>
                                     <AutoCompleteCustom items={autoCompleteDataDrop} value={dropVal} setValue={setDropVal}
                                         setSearchKey={setDropSearchKey} setCity={setDropCity} setCode={setDropCode}
+                                        setCtid={setDropCtid}
                                     />
                                 </InputGroup>
                             </FormGroup>
