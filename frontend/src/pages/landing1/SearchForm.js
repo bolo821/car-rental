@@ -117,7 +117,7 @@ const SearchForm = () => {
                     label: pickupCities[i].displayName,
                     icon: pickupCities[i].locType === 'city' ? CityIcon : AirportIcon,
                     city: pickupCities[i].cityName,
-                    code: pickupCities[i].locType === 'city' ? pickupCities[i].cc === 'US' ? pickupCities[i].rc : pickupCities[i].cc : pickupCities[i].cityId,
+                    code: pickupCities[i].locType === 'city' ? pickupCities[i].cc === 'US' ? pickupCities[i].rc : pickupCities[i].cc : pickupCities[i].ap,
                 });
             }
         }
@@ -135,7 +135,7 @@ const SearchForm = () => {
                     label: dropCities[i].displayName,
                     icon: pickupCities[i].locType === 'city' ? CityIcon : AirportIcon,
                     city: dropCities[i].cityName,
-                    code: dropCities[i].locType === 'city' ? dropCities[i].cc === 'US' ? dropCities[i].rc : dropCities[i].cc : dropCities[i].cityId,
+                    code: dropCities[i].locType === 'city' ? dropCities[i].cc === 'US' ? dropCities[i].rc : dropCities[i].cc : dropCities[i].ap,
                 });
             }
         }
