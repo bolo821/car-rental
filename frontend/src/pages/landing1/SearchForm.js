@@ -162,21 +162,21 @@ const SearchForm = () => {
     }, [ dropDate ]);
 
     useEffect(() => {
-        let index = calcNextTime(pickupTime);
+        // let index = calcNextTime(pickupTime);
 
-        if (index === -1) {
-            setPickupTime('10:00');
-        } else {
-            setDropTime(times[index].label);
-        }
+        // if (index === -1) {
+        //     setPickupTime('10:00');
+        // } else {
+        //     setDropTime(times[index].label);
+        // }
     }, [ pickupTime ]);
 
     useEffect(() => {
-        let index = calcNextTime(dropTime);
+        // let index = calcNextTime(dropTime);
 
-        if (index === -1) {
-            setDropTime(times[calcNextTime(pickupTime)].label);
-        }
+        // if (index === -1) {
+        //     setDropTime(times[calcNextTime(pickupTime)].label);
+        // }
     // eslint-disable-next-line
     }, [ dropTime ]);
 
