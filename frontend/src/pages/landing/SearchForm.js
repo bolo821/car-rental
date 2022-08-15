@@ -53,9 +53,9 @@ const SearchForm = () => {
     const [ autoCompleteDataDrop, setAutoCompleteDataDrop ] = useState([]);
 
     const [ pickupDate, setPickupDate ] = useState(getDateString(getOffsetDate(new Date(), 7)));
-    const [ pickupTime, setPickupTime ] = useState('10:00');
+    const [ pickupTime, setPickupTime ] = useState('Noon');
     const [ dropDate, setDropDate ] = useState(getDateString(getOffsetDate(new Date(), 14)));
-    const [ dropTime, setDropTime ] = useState('11:00');
+    const [ dropTime, setDropTime ] = useState('Noon');
 
     const [ showError, setShowError ] = useState(false);
 
