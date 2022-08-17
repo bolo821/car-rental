@@ -21,8 +21,8 @@ const Routes = () => {
         <>
             <Navbar />
             <Switch>
-                <Route exact path="/" component={Landing} />
-                <Route exact path="/new" component={Landing1} />
+                <Route exact path="/" component={Landing1} />
+                <Route exact path="/new" component={Landing} />
                 <Route exact path="/new/:param" component={Landing1} />
                 <Route exact path="/about" component={About} />
                 <Route exact path="/contact" component={Contact} />
