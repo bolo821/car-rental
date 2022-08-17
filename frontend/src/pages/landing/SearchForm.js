@@ -77,7 +77,7 @@ const SearchForm = () => {
                 else if (key === 'keyword') setKeyword(val);
             }
         } else {
-            history.push('/');
+            history.push('/new');
         }
     }, [ history ]);
 

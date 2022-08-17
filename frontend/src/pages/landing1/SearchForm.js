@@ -80,7 +80,7 @@ const SearchForm = () => {
                 else if (key === 'keyword') setKeyword(val);
             }
         } else {
-            history.push('/new');
+            history.push('/');
         }
     }, [ history ]);
 
