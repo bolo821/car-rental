@@ -113,13 +113,25 @@ const SearchForm = () => {
 
         if (pickupSearchKey.length >= 2) {
             for (let i=0; i<pickupCities.length; i++) {
-                tempArr.push({
-                    label: pickupCities[i].displayName,
-                    icon: pickupCities[i].locType === 'city' ? CityIcon : AirportIcon,
-                    city: pickupCities[i].cityName,
-                    code: pickupCities[i].locType === 'city' ? pickupCities[i].cc === 'US' ? pickupCities[i].rc : pickupCities[i].cc : pickupCities[i].ap,
-                    ctid: pickupCities[i].locType === 'city' ? '' : pickupCities[i].cityId,
-                });
+                var tempItem = {};
+                tempItem['label'] = pickupCities[i].displayName;
+                tempItem['city'] = pickupCities[i].cityName;
+                if(pickupCities[i].locType === 'city'){
+                    tempItem['icon'] = CityIcon;
+                    tempItem['ctid'] = 'c' + pickupCities[i].cityId;
+                    tempItem['code'] = pickupCities[i].displayName.replace(" ","") + '-' + tempItem['ctid'];
+                } else if (pickupCities[i].locType === 'ap') {
+                    tempItem['icon'] = AirportIcon;
+                    tempItem['ctid'] = 'a' + pickupCities[i].cityId;
+                    tempItem['code'] = pickupCities[i].id + '-' + tempItem['ctid'];
+                } else if (pickupCities[i].locType === 'rail') {
+                    tempItem['icon'] = AirportIcon;
+                    tempItem['ctid'] = 't' + pickupCities[i].cityId;
+                    tempItem['code'] = pickupCities[i].id + '-' + tempItem['ctid'];
+                } else {
+                    console.log("ERROR! New type of object found!", pickupCities[i].locType)
+                }
+                tempArr.push(tempItem);
             }
         }
 
@@ -132,13 +144,25 @@ const SearchForm = () => {
 
         if (dropSearchKey.length >= 2) {
             for (let i=0; i<dropCities.length; i++) {
-                tempArr.push({
-                    label: dropCities[i].displayName,
-                    icon: dropCities[i].locType === 'city' ? CityIcon : AirportIcon,
-                    city: dropCities[i].cityName,
-                    code: dropCities[i].locType === 'city' ? dropCities[i].cc === 'US' ? dropCities[i].rc : dropCities[i].cc : dropCities[i].ap,
-                    ctid: dropCities[i].locType === 'city' ? '' : dropCities[i].cityId,
-                });
+                var tempItem = {};
+                tempItem['label'] = dropCities[i].displayName;
+                tempItem['city'] = dropCities[i].cityName;
+                if(dropCities[i].locType === 'city'){
+                    tempItem['icon'] = CityIcon;
+                    tempItem['ctid'] = 'c' + dropCities[i].cityId;
+                    tempItem['code'] = dropCities[i].displayName.replace(" ","") + '-' + tempItem['ctid'];
+                } else if (dropCities[i].locType === 'ap') {
+                    tempItem['icon'] = AirportIcon;
+                    tempItem['ctid'] = 'a' + dropCities[i].cityId;
+                    tempItem['code'] = dropCities[i].id + '-' + tempItem['ctid'];
+                } else if (dropCities[i].locType === 'rail') {
+                    tempItem['icon'] = AirportIcon;
+                    tempItem['ctid'] = 't' + dropCities[i].cityId;
+                    tempItem['code'] = dropCities[i].id + '-' + tempItem['ctid'];
+                } else {
+                    console.log("ERROR! New type of object found!", dropCities[i].locType)
+                }
+                tempArr.push(tempItem);
             }
         }
 
@@ -230,8 +254,8 @@ const SearchForm = () => {
                 let redirectData = {
                     l1: l1,
                     l2: l2,
-                    pickupVal: pickupCtid !== '' ? `${pickupCode}-a${pickupCtid}` : `${pickupCity.replace(' ', '-')},${pickupCode}`,
-                    dropVal: showDrop ? dropCtid !== '' ? `${dropCode}-a${dropCtid}` : `${dropCity.replace(' ', '-')},${dropCode}` : null,
+                    pickupVal: pickupCode,
+                    dropVal: dropCode,
                     pickupDate: `${pickupDate}-12h`,
                     dropDate: `${dropDate}-11h`,
                 }
