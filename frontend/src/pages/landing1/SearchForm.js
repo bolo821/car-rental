@@ -27,6 +27,7 @@ import { toast } from 'react-toastify';
 import { times, /*cars*/ } from './data';
 import CityIcon from '../../assets/img/city_icon.svg';
 import AirportIcon from '../../assets/img/airplane_icon.svg';
+import TrainIcon from '../../assets/img/train_icon.svg';
 
 const SearchForm = () => {
     const dispatch = useDispatch();
@@ -125,7 +126,7 @@ const SearchForm = () => {
                     tempItem['ctid'] = 'a' + pickupCities[i].cityId;
                     tempItem['code'] = pickupCities[i].id + '-' + tempItem['ctid'];
                 } else if (pickupCities[i].locType === 'rail') {
-                    tempItem['icon'] = AirportIcon;
+                    tempItem['icon'] = TrainIcon;
                     tempItem['ctid'] = 't' + pickupCities[i].cityId;
                     tempItem['code'] = pickupCities[i].id + '-' + tempItem['ctid'];
                 } else {
