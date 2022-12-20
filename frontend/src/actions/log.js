@@ -24,8 +24,8 @@ export const saveLog = data => async dispatch => {
 
         if (data.sendData.gclid === '') data.sendData = { ...data.sendData, gclid: '12345' };
         let currentDate = new Date();
-        let dateString = `${currentDate.getUTCFullYear()}-${currentDate.getUTCMonth()+1}-${currentDate.getUTCDate()} ${currentDate.getUTCHours()}:${currentDate.getUTCMinutes()}:${currentDate.getUTCSeconds()}  Asia Jerusalem`;
-        let url = `${link1}/in?a=kan_242297&url=/cars/${pickupVal}${dropVal ? '/' + dropVal : ''}/${pickupDate}/${dropDate}&encoder=27_1&enc_pid=deeplinks&enc_cid=${data.sendData.gclid.substring(0, 50)}&enc_lid=${data.sendData.gclid.substring(50, data.sendData.gclid.length)}__${dateString}`;
+        let dateString = Math.floor(currentDate.getTime()/1000);
+        let url = `${link1}/in?a=kan_242297&url=/cars/${pickupVal}${dropVal ? '/' + dropVal : ''}/${pickupDate}/${dropDate}&encoder=27_1&enc_pid=deeplinks&enc_cid=${data.sendData.gclid.substring(0, 50)}&enc_lid=${data.sendData.gclid.substring(50, data.sendData.gclid.length)},${dateString}`;
         windowReference.location = url;
         
         api.post('/log', data.sendData);
